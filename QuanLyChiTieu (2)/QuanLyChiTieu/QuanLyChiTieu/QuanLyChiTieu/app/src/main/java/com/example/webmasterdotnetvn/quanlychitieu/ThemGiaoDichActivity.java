@@ -56,7 +56,7 @@ public class ThemGiaoDichActivity extends AppCompatActivity {
     private String selectedWallet = "Tiền mặt"; // Mặc định
 
     // Logic Loại giao dịch
-    // 0: Chi tiêu, 1: Thu nhập, 2: Vay nợ, 3: Chuyển khoản
+    // Mạnh  0: Chi tiêu, 1: Thu nhập, 2: Vay nợ, 3: Chuyển khoản
     private int currentTabPosition = 0;
     private String debtType = "DiVay"; // Mặc định của tab Vay nợ
 
