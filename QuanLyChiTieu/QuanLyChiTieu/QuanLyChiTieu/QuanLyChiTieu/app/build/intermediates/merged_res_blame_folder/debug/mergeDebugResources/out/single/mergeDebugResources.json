@@ -1,0 +1,466 @@
+[
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_money_bee2.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_money_bee2.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_ar_up.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_ar_up.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_close.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_search.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\search.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_an_uong.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_an_uong.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_reset.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_reset.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_list.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_bg_pink_rounded.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\bg_pink_rounded.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_lich_su.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_lich_su.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_fragment_muc_chi.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\fragment_muc_chi.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\menu_lich_su_menu.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\menu\\lich_su_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_bg_circle_green.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\bg_circle_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_arr_up.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_arr_up.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_item_thu_nhap.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\item_thu_nhap.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_arrow_up.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_arrow_up.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_note.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_note.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_cloud_check_variant.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\cloud_check_variant.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_plus.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\plus.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_restaurant.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_restaurant.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\anim_fade_in.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_meal.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_meal.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_bag_checked.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\bag_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_arr_down.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_arr_down.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_menu_home.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_menu_home.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_chevron_left.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\chevron_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_item_vi_tien.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\item_vi_tien.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_ar_down.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_ar_down.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_settings_white.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_settings_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_refund.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_refund.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_lightning_bolt.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\lightning_bolt.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_baseline_more_vert_24.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\baseline_more_vert_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_fragment_tong_thu.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\fragment_tong_thu.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_fragment_chenh_lech.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\fragment_chenh_lech.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_fragment_kham_pha.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\fragment_kham_pha.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_sell.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_sell.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_food.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_gift.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_gift.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_item_category.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\item_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_bank.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_bank.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_cash.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_cash.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_fragment_nhom_chi.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\fragment_nhom_chi.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_rent.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_rent.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_wallet_outline.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_wallet_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_selected_item_border.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\selected_item_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_coffee.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_coffee.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_fragment_category_list.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\fragment_category_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_store.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\store.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_selected_wallet_background.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\selected_wallet_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_other.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_other.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_chevron_right.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\chevron_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_discount.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_discount.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_wallet.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_wallet.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_avatar_placeholder.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_avatar_placeholder.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_arrow_right.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_arrow_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_arrow_left.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\arrow_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_bg_input_signin.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\bg_input_signin.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_tien.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_tien.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_schedule.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_schedule.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_luong.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_luong.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_electric.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_electric.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_nha_cua.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_nha_cua.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_date_range_background.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\date_range_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_category_settings.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_category_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_category.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_ar_back.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_ar_back.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_item_transaction_nhom.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\item_transaction_nhom.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_salary.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_salary.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_arrow_down.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_arrow_down.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_bonus.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_bonus.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_eat_restaurant.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_eat_restaurant.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_chevron_right.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_chevron_right.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\anim_slide_up_slow.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\anim\\slide_up_slow.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_ban_do.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_ban_do.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_grocery.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_grocery.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_snack.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_snack.xml"
+    },
+    {
+        "merged": "com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:/layout_activity_category_settings.xml.flat",
+        "source": "com.example.webmasterdotnetvn.quanlychitieu.app-main-36:/layout/activity_category_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_kham_pha.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_kham_pha.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_interest.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_interest.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_them_giao_dich.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_them_giao_dich.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_electricity_bill.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_electricity_bill.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_filter_variant.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\filter_variant.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_bottom_sheet_chon_vi.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\bottom_sheet_chon_vi.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_cap_nhat_so_du.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_cap_nhat_so_du.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_taisan.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_taisan.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_coffee.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\coffee.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_item_lich_su_giao_dich.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\item_lich_su_giao_dich.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_calendar.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_activity_create_wallet.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\activity_create_wallet.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\layout_fragment_tong_chi_container.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\layout\\fragment_tong_chi_container.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_rounded_top_corners_background.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\rounded_top_corners_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-debug-34:\\drawable_ic_edit_pencil.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.13\\com.example.webmasterdotnetvn.quanlychitieu.app-main-36:\\drawable\\ic_edit_pencil.xml"
+    }
+]
