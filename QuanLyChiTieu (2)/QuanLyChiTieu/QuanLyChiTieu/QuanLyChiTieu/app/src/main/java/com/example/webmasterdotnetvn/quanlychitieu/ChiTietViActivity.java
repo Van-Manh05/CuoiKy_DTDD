@@ -23,7 +23,7 @@ public class ChiTietViActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private String walletId, walletName;
 
-    // Đưa biến này ra ngoài để dùng chung cho cả onCreate và loadRealTimeBalance
+
     private double currentBalance = 0;
 
     private DecimalFormat formatter = new DecimalFormat("#,###");
@@ -66,8 +66,6 @@ public class ChiTietViActivity extends AppCompatActivity {
             intent.putExtra("preSelectedWalletName", walletName);
             startActivity(intent);
         });
-
-        // 2. Nút RÚT TIỀN (ĐÃ CẬP NHẬT) -> Chuyển sang RutTienActivity
         btnWithdraw.setOnClickListener(v -> {
             Intent intent = new Intent(ChiTietViActivity.this, RutTienActivity.class);
             intent.putExtra("walletId", walletId);

@@ -27,7 +27,7 @@ public class ChiPhiAdapter extends RecyclerView.Adapter<ChiPhiAdapter.ChiPhiView
     @Override
     public ChiPhiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_transaction_nhom, parent, false);
         return new ChiPhiViewHolder(view);
     }
