@@ -33,7 +33,7 @@ public class CreateWalletActivity extends AppCompatActivity {
 
         cardViCoBan.setOnClickListener(v -> {
             Toast.makeText(this, "Chọn Ví Cơ Bản", Toast.LENGTH_SHORT).show();
-            
+
         });
 
         cardTheTinDung.setOnClickListener(v -> {
