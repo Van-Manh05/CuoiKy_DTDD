@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvRegister;
 
-    // Khai báo Firebase Auth
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            // Nếu đã đăng nhập rồi -> Chuyển thẳng vào màn hình chính
+            
             goToMainActivity();
         }
     }

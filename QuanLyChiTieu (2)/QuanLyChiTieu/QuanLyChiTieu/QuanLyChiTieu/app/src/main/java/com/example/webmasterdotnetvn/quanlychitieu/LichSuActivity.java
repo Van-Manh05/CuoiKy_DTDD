@@ -65,7 +65,7 @@ public class LichSuActivity extends AppCompatActivity {
         displaySdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         parseSdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
-        
+
         startDate = Calendar.getInstance();
         endDate = Calendar.getInstance();
         startDate.set(Calendar.DAY_OF_MONTH, 1);
