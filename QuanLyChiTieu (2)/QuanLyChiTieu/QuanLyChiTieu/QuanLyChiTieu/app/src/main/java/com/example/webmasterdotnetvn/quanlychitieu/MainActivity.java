@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
     BottomNavigationView bottomNavigationView;
 
-    
+
     private FirebaseAuth mAuth;
 
     @Override

@@ -36,7 +36,7 @@ public class MucChiFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_muc_chi, container, false);
     }
 
@@ -44,7 +44,7 @@ public class MucChiFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // 1. Ánh xạ (tìm) PieChart và RecyclerView
+        
         pieChart = view.findViewById(R.id.pieChart_mucChi);
         recyclerView = view.findViewById(R.id.recyclerView_mucChi);
 
