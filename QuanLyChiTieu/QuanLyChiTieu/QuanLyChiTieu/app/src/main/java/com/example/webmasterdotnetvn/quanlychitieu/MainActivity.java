@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setupBottomNavigation();
         setupEvents();
 
-        // Mặc định load màn hình Tổng quan
+        // Mặc định load màn hình Tổng quan cu dự án
         if (savedInstanceState == null) {
             loadFragment(new TongQuanFragment());
         }
