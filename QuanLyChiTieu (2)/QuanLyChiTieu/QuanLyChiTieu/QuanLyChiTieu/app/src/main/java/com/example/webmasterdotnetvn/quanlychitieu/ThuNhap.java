@@ -1,4 +1,4 @@
-// File: ThuNhap.java
+
 package com.example.webmasterdotnetvn.quanlychitieu;
 
 public class ThuNhap {

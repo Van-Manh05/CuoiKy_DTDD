@@ -46,7 +46,7 @@ public class ThemGiaoDichActivity extends AppCompatActivity {
     private TextView tvLabelRow2, tvValueRow2; // Dòng 2 (Ví / Đến ví)
     private TextView tvDate;
 
-    
+
     private FirebaseFirestore db;
     private String uid;
 

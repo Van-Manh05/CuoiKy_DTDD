@@ -1,4 +1,4 @@
-// File: ThuNhapAdapter.java
+
 package com.example.webmasterdotnetvn.quanlychitieu;
 
 import android.view.LayoutInflater;
