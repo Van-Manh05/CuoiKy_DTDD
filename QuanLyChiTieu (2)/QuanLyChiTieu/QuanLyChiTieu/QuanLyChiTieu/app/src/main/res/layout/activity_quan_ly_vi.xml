@@ -16,7 +16,7 @@
         android:layout_height="48dp"
         android:layout_centerVertical="true"
         android:src="@drawable/ic_close"
-        android:padding="12dp"
+        android:padding="11dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Đóng" />
 
