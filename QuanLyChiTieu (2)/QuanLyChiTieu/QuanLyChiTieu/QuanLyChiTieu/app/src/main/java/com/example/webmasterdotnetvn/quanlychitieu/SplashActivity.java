@@ -16,8 +16,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        // Hiệu ứng chờ 2 giây
+        
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             nextActivity();
         }, 2000);

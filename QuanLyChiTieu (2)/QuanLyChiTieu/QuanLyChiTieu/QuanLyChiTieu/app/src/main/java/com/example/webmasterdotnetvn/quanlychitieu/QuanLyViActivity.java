@@ -29,7 +29,7 @@ public class QuanLyViActivity extends AppCompatActivity {
 
     private ImageView btnBack, btnAddWallet;
     private ListView lvWallets;
-    
+
     private WalletAdapter adapter;
     private List<WalletModel> walletList;
 

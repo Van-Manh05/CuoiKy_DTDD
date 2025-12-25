@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnRegister;
     TextView tvLogin;
 
-    // Khai báo Firebase
+
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
