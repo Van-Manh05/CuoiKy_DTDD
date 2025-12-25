@@ -51,7 +51,7 @@ public class GiaoDichAdapter extends RecyclerView.Adapter<GiaoDichAdapter.GiaoDi
             holder.tvAmount.setTextColor(Color.parseColor("#E53935")); // Màu đỏ
         }
 
-        // Sự kiện click để Sửa/Xóa (sẽ làm sau)
+
         holder.itemView.setOnClickListener(v -> {
             // Toast.makeText(context, "Chọn: " + gd.getCategory(), Toast.LENGTH_SHORT).show();
         });

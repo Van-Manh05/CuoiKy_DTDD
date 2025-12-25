@@ -11,7 +11,7 @@ public class GiaoDich implements Serializable {
     private Date date;        // Ngày tháng (Firebase tự map Timestamp sang Date)
     private String type;      // Loại: "THU" hoặc "CHI"
 
-    
+
     public GiaoDich() { }
 
 
