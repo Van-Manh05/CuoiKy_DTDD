@@ -2,7 +2,7 @@
 package com.example.webmasterdotnetvn.quanlychitieu;
 
 public class ThuNhap {
-    private int iconResId;
+    private int iconResId; // id
     private String tenNguon;
     private double soTien;
 

@@ -86,8 +86,8 @@ public class ChenhLechFragment extends Fragment {
     private void loadBarChartData() {
         // === DỮ LIỆU CỘT CHỒNG ===
         // Dữ liệu giả lập từ app của bạn:
-        // Chi = 9.000.000 (màu đỏ)
-        // Thu = 20.000.000 (màu xanh)
+        // Chi = 9tr(màu đỏ)
+        // Thu = 20tr(màu xanh)
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 

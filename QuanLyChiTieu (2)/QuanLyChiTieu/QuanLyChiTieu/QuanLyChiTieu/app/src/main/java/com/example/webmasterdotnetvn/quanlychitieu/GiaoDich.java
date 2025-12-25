@@ -4,12 +4,12 @@ import java.io.Serializable; // Để truyền object giữa các màn hình (Se
 import java.util.Date;
 
 public class GiaoDich implements Serializable {
-    private String id;        // ID của document trên Firebase (Lưu lại để sau này Sửa/Xóa)
-    private double amount;    // Số tiền
-    private String category;  // Danh mục (Ăn uống, Nhà cửa...)
-    private String note;      // Ghi chú
-    private Date date;        // Ngày tháng (Firebase tự map Timestamp sang Date)
-    private String type;      // Loại: "THU" hoặc "CHI"
+    private String id;
+    private double amount;
+    private String category;
+    private String note;
+    private Date date;
+    private String type;
 
 
     public GiaoDich() { }

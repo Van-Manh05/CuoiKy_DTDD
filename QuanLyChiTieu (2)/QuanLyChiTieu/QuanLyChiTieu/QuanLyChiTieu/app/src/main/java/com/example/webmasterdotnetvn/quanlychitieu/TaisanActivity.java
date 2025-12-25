@@ -77,7 +77,7 @@ public class TaisanActivity extends AppCompatActivity {
 
             }
         });
-
+        // set
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
