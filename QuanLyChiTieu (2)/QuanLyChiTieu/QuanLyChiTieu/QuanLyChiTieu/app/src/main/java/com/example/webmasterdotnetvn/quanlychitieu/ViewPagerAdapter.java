@@ -16,14 +16,14 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         // position 0 là tab đầu tiên, 1 là tab thứ hai
         if (position == 0) {
-            return new NhomChiFragment(); // Trả về Fragment Nhóm Chi
+            return new NhomChiFragment();
         } else {
-            return new MucChiFragment(); // Trả về Fragment Mục Chi
+            return new MucChiFragment();
         }
     }
 
     @Override
     public int getItemCount() {
-        return 2; // Có tổng 2 tab
+        return 2; 
     }
 }
