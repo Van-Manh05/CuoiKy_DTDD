@@ -50,7 +50,7 @@ public class ViTienAdapter extends RecyclerView.Adapter<ViTienAdapter.ViTienView
         } else {
             holder.imgIcon.setImageResource(R.drawable.ic_wallet_gray);
         }
-        
+
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) listener.onWalletClick(vi);
         });

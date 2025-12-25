@@ -3,11 +3,11 @@ package com.example.webmasterdotnetvn.quanlychitieu;
 import com.google.firebase.firestore.Exclude;
 
 public class Category {
-    private String id;        // ID của document (để Xóa/Sửa)
-    private String name;      // Tên danh mục (Ăn uống, Lương...)
-    private String type;      // Loại: "CHI" hoặc "THU"
+    private String id;
+    private String name;
+    private String type;
 
-    // Constructor rỗng (BẮT BUỘC để Firebase hoạt động)
+    
     public Category() {
     }
 
