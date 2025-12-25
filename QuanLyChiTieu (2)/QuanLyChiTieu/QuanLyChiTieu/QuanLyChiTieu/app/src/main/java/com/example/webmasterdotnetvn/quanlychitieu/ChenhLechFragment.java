@@ -26,13 +26,13 @@ public class ChenhLechFragment extends Fragment {
     BarChart barChart;
 
     public ChenhLechFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Nạp layout
+
         return inflater.inflate(R.layout.fragment_chenh_lech, container, false);
     }
 
@@ -40,7 +40,7 @@ public class ChenhLechFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // 1. Ánh xạ
+        
         barChart = view.findViewById(R.id.barChart_chenhLech);
 
         // 2. Trang trí

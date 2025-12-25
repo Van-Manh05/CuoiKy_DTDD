@@ -25,7 +25,7 @@ public class CategorySettingsActivity extends AppCompatActivity {
         if (btnBack != null) {
             btnBack.setOnClickListener(v -> finish());
         }
-        
+
         CategoryPagerAdapter adapter = new CategoryPagerAdapter(this);
         viewPager.setAdapter(adapter);
 
