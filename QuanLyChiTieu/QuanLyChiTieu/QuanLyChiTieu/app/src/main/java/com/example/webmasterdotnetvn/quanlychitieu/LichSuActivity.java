@@ -23,8 +23,10 @@ import com.google.firebase.firestore.Query;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 public class LichSuActivity extends AppCompatActivity {
 
@@ -46,9 +48,12 @@ public class LichSuActivity extends AppCompatActivity {
     private Calendar currentCal;
     private SimpleDateFormat sdfDisplay = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
-    // Biến lưu trạng thái lọc
+    // --- BIẾN LƯU TRẠNG THÁI LỌC ---
     private String filterWalletName = null; // null = Tất cả ví
-    private List<String> listWalletNames = new ArrayList<>(); // Danh sách tên ví để hiển thị trong Dialog
+    private String filterCategory = null;   // null = Tất cả mục (MỚI)
+
+    private List<String> listWalletNames = new ArrayList<>();
+    private List<String> listCategories = new ArrayList<>(); // Danh sách mục (MỚI)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +71,9 @@ public class LichSuActivity extends AppCompatActivity {
         setupRecyclerView();
         setupEvents();
 
-        // Tải trước danh sách ví để dùng cho bộ lọc
+        // Tải dữ liệu cho các bộ lọc
         preloadWallets();
+        preloadCategories(); // (MỚI)
 
         updateDateRangeDisplay();
         loadHistoryData();
@@ -106,13 +112,13 @@ public class LichSuActivity extends AppCompatActivity {
             loadHistoryData();
         });
 
-        // Nút Lọc VÍ -> Hiện Dialog chọn
+        // Nút Lọc VÍ
         btnChonVi.setOnClickListener(v -> showWalletFilterDialog());
 
-        // Nút Lọc MỤC (Tương lai)
-        btnChonMuc.setOnClickListener(v -> Toast.makeText(this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show());
+        // Nút Lọc MỤC (ĐÃ CẬP NHẬT)
+        btnChonMuc.setOnClickListener(v -> showCategoryFilterDialog());
 
-        // Bottom Navigation
+        // Navigation
         bottomNavigationView.setSelectedItemId(R.id.nav_lichsu);
         fab.setOnClickListener(v -> startActivity(new Intent(this, ThemGiaoDichActivity.class)));
 
@@ -144,16 +150,16 @@ public class LichSuActivity extends AppCompatActivity {
         tvDateRange.setText(rangeText);
     }
 
-    // --- LOGIC LỌC VÍ ---
+    // ================== PHẦN LỌC DỮ LIỆU ==================
 
-    // 1. Tải danh sách ví về trước
+    // --- 1. XỬ LÝ LỌC VÍ ---
     private void preloadWallets() {
         if (uid == null) return;
         db.collection("users").document(uid).collection("wallets")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     listWalletNames.clear();
-                    listWalletNames.add("Tất cả ví"); // Option mặc định
+                    listWalletNames.add("Tất cả ví");
                     for (DocumentSnapshot doc : queryDocumentSnapshots) {
                         String name = doc.getString("name");
                         if (name != null) listWalletNames.add(name);
@@ -161,35 +167,78 @@ public class LichSuActivity extends AppCompatActivity {
                 });
     }
 
-    // 2. Hiển thị Dialog chọn ví
     private void showWalletFilterDialog() {
         if (listWalletNames.isEmpty()) {
             Toast.makeText(this, "Đang tải danh sách ví...", Toast.LENGTH_SHORT).show();
             preloadWallets();
             return;
         }
-
         String[] walletsArray = listWalletNames.toArray(new String[0]);
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Chọn ví để lọc");
-        builder.setItems(walletsArray, (dialog, which) -> {
-            if (which == 0) {
-                // Chọn "Tất cả ví"
-                filterWalletName = null;
-                btnChonVi.setText("Tất cả ví");
-            } else {
-                // Chọn 1 ví cụ thể
-                filterWalletName = walletsArray[which];
-                btnChonVi.setText(filterWalletName);
-            }
-            // Tải lại dữ liệu sau khi chọn
-            loadHistoryData();
-        });
-        builder.show();
+        new AlertDialog.Builder(this)
+                .setTitle("Chọn ví")
+                .setItems(walletsArray, (dialog, which) -> {
+                    if (which == 0) {
+                        filterWalletName = null;
+                        btnChonVi.setText("Tất cả ví");
+                    } else {
+                        filterWalletName = walletsArray[which];
+                        btnChonVi.setText(filterWalletName);
+                    }
+                    loadHistoryData(); // Tải lại
+                })
+                .show();
     }
 
-    // 3. Tải và Lọc dữ liệu
+    // --- 2. XỬ LÝ LỌC MỤC (CATEGORY) ---
+    private void preloadCategories() {
+        if (uid == null) return;
+
+        // Cách tối ưu: Lấy danh sách các loại giao dịch ĐÃ TỪNG XUẤT HIỆN
+        db.collection("users").document(uid).collection("transactions")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    // Dùng Set để loại bỏ các mục trùng nhau
+                    Set<String> uniqueCategories = new HashSet<>();
+                    uniqueCategories.add("Nạp tiền");
+                    uniqueCategories.add("Rút tiền");
+
+                    for (DocumentSnapshot doc : queryDocumentSnapshots) {
+                        String cat = doc.getString("category");
+                        if (cat != null && !cat.isEmpty()) {
+                            uniqueCategories.add(cat);
+                        }
+                    }
+
+                    listCategories.clear();
+                    listCategories.add("Tất cả mục");
+                    listCategories.addAll(uniqueCategories);
+                });
+    }
+
+    private void showCategoryFilterDialog() {
+        if (listCategories.isEmpty()) {
+            Toast.makeText(this, "Đang tải danh sách mục...", Toast.LENGTH_SHORT).show();
+            preloadCategories();
+            return;
+        }
+
+        String[] catArray = listCategories.toArray(new String[0]);
+        new AlertDialog.Builder(this)
+                .setTitle("Chọn mục")
+                .setItems(catArray, (dialog, which) -> {
+                    if (which == 0) {
+                        filterCategory = null;
+                        btnChonMuc.setText("Tất cả mục");
+                    } else {
+                        filterCategory = catArray[which];
+                        btnChonMuc.setText(filterCategory);
+                    }
+                    loadHistoryData(); // Tải lại
+                })
+                .show();
+    }
+
+    // --- 3. HÀM TẢI DỮ LIỆU CHÍNH ---
     private void loadHistoryData() {
         if (uid == null) return;
 
@@ -201,7 +250,6 @@ public class LichSuActivity extends AppCompatActivity {
         end.set(Calendar.DAY_OF_MONTH, end.getActualMaximum(Calendar.DAY_OF_MONTH));
         end.set(Calendar.HOUR_OF_DAY, 23); end.set(Calendar.MINUTE, 59); end.set(Calendar.SECOND, 59);
 
-        // Lấy dữ liệu theo ngày trước
         db.collection("users").document(uid).collection("transactions")
                 .whereGreaterThanOrEqualTo("date", start.getTime())
                 .whereLessThanOrEqualTo("date", end.getTime())
@@ -213,26 +261,33 @@ public class LichSuActivity extends AppCompatActivity {
                         for (DocumentSnapshot doc : value.getDocuments()) {
                             GiaoDich gd = doc.toObject(GiaoDich.class);
                             if (gd != null) {
-                                // --- BỘ LỌC CLIENT-SIDE ---
+
+                                // --- BỘ LỌC 1: VÍ ---
                                 if (filterWalletName != null) {
-                                    // Kiểm tra xem giao dịch có liên quan đến ví này không
-                                    // 1. Nếu GiaoDich có field walletName
-                                    // 2. Hoặc kiểm tra trong Note (Vì code Nạp/Rút cũ lưu tên ví vào Note)
-                                    boolean match = false;
-
-                                    // Kiểm tra Note (VD: "Nạp tiền vào ví Tiền mặt")
+                                    boolean matchWallet = false;
                                     if (gd.getNote() != null && gd.getNote().contains(filterWalletName)) {
-                                        match = true;
+                                        matchWallet = true;
                                     }
+                                    if (!matchWallet) continue; // Bỏ qua nếu không đúng ví
+                                }
 
-                                    // Nếu không khớp -> Bỏ qua dòng này (Không add vào list)
-                                    if (!match) continue;
+                                // --- BỘ LỌC 2: MỤC (CATEGORY) ---
+                                if (filterCategory != null) {
+                                    // So sánh chính xác tên mục (VD: "Ăn uống", "Nạp tiền")
+                                    if (gd.getCategory() == null || !gd.getCategory().equals(filterCategory)) {
+                                        continue; // Bỏ qua nếu không đúng mục
+                                    }
                                 }
 
                                 listGiaoDich.add(gd);
                             }
                         }
                         adapter.notifyDataSetChanged();
+
+                        // Thông báo nếu danh sách trống
+                        if (listGiaoDich.isEmpty()) {
+                            // Có thể hiện 1 TextView "Không có dữ liệu" ở đây nếu muốn
+                        }
                     }
                 });
     }
