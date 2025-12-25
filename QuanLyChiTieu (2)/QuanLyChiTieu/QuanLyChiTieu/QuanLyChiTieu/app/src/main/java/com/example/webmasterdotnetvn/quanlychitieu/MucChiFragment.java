@@ -44,7 +44,7 @@ public class MucChiFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        
+
         pieChart = view.findViewById(R.id.pieChart_mucChi);
         recyclerView = view.findViewById(R.id.recyclerView_mucChi);
 

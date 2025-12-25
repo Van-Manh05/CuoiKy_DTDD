@@ -57,7 +57,7 @@ public class QuanLyViActivity extends AppCompatActivity {
         adapter = new WalletAdapter();
         lvWallets.setAdapter(adapter);
 
-        // Load dữ liệu
+        
         loadWallets();
 
         // Sự kiện Click

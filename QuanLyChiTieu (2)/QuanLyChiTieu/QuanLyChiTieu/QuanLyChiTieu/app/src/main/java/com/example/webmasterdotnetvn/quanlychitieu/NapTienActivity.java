@@ -87,7 +87,7 @@ public class NapTienActivity extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
 
-                    // Tự động chọn ví nếu được truyền từ màn hình Chi tiết
+
                     if (preSelectedWalletName != null) {
                         int position = walletNames.indexOf(preSelectedWalletName);
                         if (position >= 0) {

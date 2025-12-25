@@ -25,8 +25,8 @@ public class NhomChiFragment extends Fragment {
     // Khai báo View
     PieChart pieChart;
     RecyclerView recyclerView; // <-- KHAI BÁO MỚI
-    ChiPhiAdapter adapter; // <-- KHAI BÁO MỚI
-    List<ChiPhi> danhSachChiPhi; // <-- KHAI BÁO MỚI
+    ChiPhiAdapter adapter;
+    List<ChiPhi> danhSachChiPhi;
 
     public NhomChiFragment() {
 
