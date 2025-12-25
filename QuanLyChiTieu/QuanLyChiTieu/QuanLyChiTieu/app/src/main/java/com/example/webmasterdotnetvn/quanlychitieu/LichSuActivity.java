@@ -2,7 +2,6 @@ package com.example.webmasterdotnetvn.quanlychitieu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -40,7 +38,7 @@ public class LichSuActivity extends AppCompatActivity {
     private MaterialButton btnChonVi, btnChonMuc;
 
     private BottomNavigationView bottomNavigationView;
-    private FloatingActionButton fab;
+    // Đã xóa FloatingActionButton fab theo yêu cầu
 
     // Data & Logic
     private FirebaseFirestore db;
@@ -50,10 +48,10 @@ public class LichSuActivity extends AppCompatActivity {
 
     // --- BIẾN LƯU TRẠNG THÁI LỌC ---
     private String filterWalletName = null; // null = Tất cả ví
-    private String filterCategory = null;   // null = Tất cả mục (MỚI)
+    private String filterCategory = null;   // null = Tất cả mục
 
     private List<String> listWalletNames = new ArrayList<>();
-    private List<String> listCategories = new ArrayList<>(); // Danh sách mục (MỚI)
+    private List<String> listCategories = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +71,7 @@ public class LichSuActivity extends AppCompatActivity {
 
         // Tải dữ liệu cho các bộ lọc
         preloadWallets();
-        preloadCategories(); // (MỚI)
+        preloadCategories();
 
         updateDateRangeDisplay();
         loadHistoryData();
@@ -88,7 +86,7 @@ public class LichSuActivity extends AppCompatActivity {
         btnChonMuc = findViewById(R.id.btnChonMuc);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_lich_su);
-        fab = findViewById(R.id.fab_lich_su);
+        // Đã xóa ánh xạ FAB
     }
 
     private void setupRecyclerView() {
@@ -115,25 +113,42 @@ public class LichSuActivity extends AppCompatActivity {
         // Nút Lọc VÍ
         btnChonVi.setOnClickListener(v -> showWalletFilterDialog());
 
-        // Nút Lọc MỤC (ĐÃ CẬP NHẬT)
+        // Nút Lọc MỤC
         btnChonMuc.setOnClickListener(v -> showCategoryFilterDialog());
 
-        // Navigation
+        // --- CẬP NHẬT NAVIGATION ---
         bottomNavigationView.setSelectedItemId(R.id.nav_lichsu);
-        fab.setOnClickListener(v -> startActivity(new Intent(this, ThemGiaoDichActivity.class)));
-
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
+
             if (itemId == R.id.nav_tongquan) {
                 startActivity(new Intent(this, MainActivity.class));
-                overridePendingTransition(0, 0); finish(); return true;
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
             } else if (itemId == R.id.nav_taisan) {
                 startActivity(new Intent(this, TaisanActivity.class));
-                overridePendingTransition(0, 0); finish(); return true;
-            } else if (itemId == R.id.nav_lichsu) return true;
-            else if (itemId == R.id.nav_khampha) {
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
+            } else if (itemId == R.id.nav_ngansach) {
+                // Chuyển về MainActivity (nơi chứa Fragment Ngân sách)
+                // Lưu ý: Mặc định sẽ về Tổng quan, cần xử lý thêm ở MainActivity nếu muốn mở thẳng tab Ngân sách
+                startActivity(new Intent(this, MainActivity.class));
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
+            } else if (itemId == R.id.nav_lichsu) {
+                return true;
+
+            } else if (itemId == R.id.nav_khampha) {
                 startActivity(new Intent(this, KhamPhaActivity.class));
-                overridePendingTransition(0, 0); finish(); return true;
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
             }
             return false;
         });
@@ -184,20 +199,17 @@ public class LichSuActivity extends AppCompatActivity {
                         filterWalletName = walletsArray[which];
                         btnChonVi.setText(filterWalletName);
                     }
-                    loadHistoryData(); // Tải lại
+                    loadHistoryData();
                 })
                 .show();
     }
 
-    // --- 2. XỬ LÝ LỌC MỤC (CATEGORY) ---
+    // --- 2. XỬ LÝ LỌC MỤC ---
     private void preloadCategories() {
         if (uid == null) return;
-
-        // Cách tối ưu: Lấy danh sách các loại giao dịch ĐÃ TỪNG XUẤT HIỆN
         db.collection("users").document(uid).collection("transactions")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
-                    // Dùng Set để loại bỏ các mục trùng nhau
                     Set<String> uniqueCategories = new HashSet<>();
                     uniqueCategories.add("Nạp tiền");
                     uniqueCategories.add("Rút tiền");
@@ -208,7 +220,6 @@ public class LichSuActivity extends AppCompatActivity {
                             uniqueCategories.add(cat);
                         }
                     }
-
                     listCategories.clear();
                     listCategories.add("Tất cả mục");
                     listCategories.addAll(uniqueCategories);
@@ -221,7 +232,6 @@ public class LichSuActivity extends AppCompatActivity {
             preloadCategories();
             return;
         }
-
         String[] catArray = listCategories.toArray(new String[0]);
         new AlertDialog.Builder(this)
                 .setTitle("Chọn mục")
@@ -233,12 +243,12 @@ public class LichSuActivity extends AppCompatActivity {
                         filterCategory = catArray[which];
                         btnChonMuc.setText(filterCategory);
                     }
-                    loadHistoryData(); // Tải lại
+                    loadHistoryData();
                 })
                 .show();
     }
 
-    // --- 3. HÀM TẢI DỮ LIỆU CHÍNH ---
+    // --- 3. HÀM TẢI DỮ LIỆU ---
     private void loadHistoryData() {
         if (uid == null) return;
 
@@ -261,33 +271,24 @@ public class LichSuActivity extends AppCompatActivity {
                         for (DocumentSnapshot doc : value.getDocuments()) {
                             GiaoDich gd = doc.toObject(GiaoDich.class);
                             if (gd != null) {
-
-                                // --- BỘ LỌC 1: VÍ ---
+                                // Lọc Ví
                                 if (filterWalletName != null) {
                                     boolean matchWallet = false;
                                     if (gd.getNote() != null && gd.getNote().contains(filterWalletName)) {
                                         matchWallet = true;
                                     }
-                                    if (!matchWallet) continue; // Bỏ qua nếu không đúng ví
+                                    if (!matchWallet) continue;
                                 }
-
-                                // --- BỘ LỌC 2: MỤC (CATEGORY) ---
+                                // Lọc Mục
                                 if (filterCategory != null) {
-                                    // So sánh chính xác tên mục (VD: "Ăn uống", "Nạp tiền")
                                     if (gd.getCategory() == null || !gd.getCategory().equals(filterCategory)) {
-                                        continue; // Bỏ qua nếu không đúng mục
+                                        continue;
                                     }
                                 }
-
                                 listGiaoDich.add(gd);
                             }
                         }
                         adapter.notifyDataSetChanged();
-
-                        // Thông báo nếu danh sách trống
-                        if (listGiaoDich.isEmpty()) {
-                            // Có thể hiện 1 TextView "Không có dữ liệu" ở đây nếu muốn
-                        }
                     }
                 });
     }

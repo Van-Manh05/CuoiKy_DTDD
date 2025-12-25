@@ -178,15 +178,4 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_taisan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#FFC107"
-        app:tint="#FFFFFF"
-        app:layout_anchor="@id/bottomNavigationView_taisan"
-        app:layout_anchorGravity="top|center_horizontal" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,18 +2,13 @@ package com.example.webmasterdotnetvn.quanlychitieu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-
-        // Kiểm tra nếu chưa đăng nhập thì đá về màn hình Login ngay
         if (mAuth.getCurrentUser() == null) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
@@ -39,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
         setupBottomNavigation();
         setupEvents();
 
-        // Mặc định load màn hình Tổng quan
+        // Mặc định load màn hình Tổng quan và Hiện FAB
         if (savedInstanceState == null) {
             loadFragment(new TongQuanFragment());
+            fab.show();
         }
     }
 
@@ -51,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupEvents() {
-        // Nút FAB -> Mở màn hình Thêm Giao Dịch
         fab.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, ThemGiaoDichActivity.class));
         });
@@ -63,15 +56,24 @@ public class MainActivity extends AppCompatActivity {
 
             if (itemId == R.id.nav_tongquan) {
                 loadFragment(new TongQuanFragment());
+                fab.show(); // -> HIỆN FAB
                 return true;
+
             } else if (itemId == R.id.nav_taisan) {
                 startActivity(new Intent(MainActivity.this, TaisanActivity.class));
-                overridePendingTransition(0, 0); // Tắt hiệu ứng chuyển cảnh để mượt hơn
+                overridePendingTransition(0, 0);
                 return true;
+
+            } else if (itemId == R.id.nav_ngansach) {
+                loadFragment(new NganSachFragment());
+                fab.hide(); // -> ẨN FAB
+                return true;
+
             } else if (itemId == R.id.nav_lichsu) {
                 startActivity(new Intent(MainActivity.this, LichSuActivity.class));
                 overridePendingTransition(0, 0);
                 return true;
+
             } else if (itemId == R.id.nav_khampha) {
                 startActivity(new Intent(MainActivity.this, KhamPhaActivity.class));
                 overridePendingTransition(0, 0);
@@ -84,16 +86,24 @@ public class MainActivity extends AppCompatActivity {
     private void loadFragment(Fragment fragment) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.main_fragment_container, fragment); // ID này phải khớp với layout activity_main.xml
+        ft.replace(R.id.main_fragment_container, fragment);
         ft.commit();
     }
 
-    // Khi quay lại từ các Activity khác, đảm bảo Tab Tổng quan được chọn
     @Override
     protected void onResume() {
         super.onResume();
         if (bottomNavigationView != null) {
-            bottomNavigationView.setSelectedItemId(R.id.nav_tongquan);
+            // Logic để đảm bảo trạng thái đúng khi quay lại từ Activity khác
+            int selectedId = bottomNavigationView.getSelectedItemId();
+            if (selectedId == R.id.nav_tongquan) {
+                fab.show();
+            } else if (selectedId == R.id.nav_ngansach) {
+                fab.hide();
+            } else {
+                // Nếu từ Tài sản, Lịch sử... quay về thì mặc định về Tổng quan
+                bottomNavigationView.setSelectedItemId(R.id.nav_tongquan);
+            }
         }
     }
 }
