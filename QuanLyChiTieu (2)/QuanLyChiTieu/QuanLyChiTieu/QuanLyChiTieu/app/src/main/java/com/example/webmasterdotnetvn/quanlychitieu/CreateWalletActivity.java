@@ -25,10 +25,7 @@ public class CreateWalletActivity extends AppCompatActivity {
         cardViCoBan = findViewById(R.id.cardViCoBan);
         cardTheTinDung = findViewById(R.id.cardTheTinDung);
         cardViVayNo = findViewById(R.id.cardViVayNo);
-
-        // 2. Xử lý nút Back (QUAN TRỌNG)
-        // Khi bấm nút này, nó sẽ gọi finish() để đóng Activity hiện tại
-        // và quay về Activity trước đó (TaisanActivity)
+        
         btnBack.setOnClickListener(v -> {
             finish();
         });
