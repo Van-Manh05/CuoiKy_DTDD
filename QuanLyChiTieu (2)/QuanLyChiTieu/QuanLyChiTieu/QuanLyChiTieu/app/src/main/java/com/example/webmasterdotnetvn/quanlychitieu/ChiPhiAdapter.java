@@ -15,19 +15,19 @@ import java.util.List;
 public class ChiPhiAdapter extends RecyclerView.Adapter<ChiPhiAdapter.ChiPhiViewHolder> {
 
     private List<ChiPhi> chiPhiList;
-    private DecimalFormat decimalFormat; // Để định dạng số tiền
+    private DecimalFormat decimalFormat;
 
     public ChiPhiAdapter(List<ChiPhi> chiPhiList) {
         this.chiPhiList = chiPhiList;
-        // Định dạng số có dấu chấm ngăn cách hàng nghìn
+
         this.decimalFormat = new DecimalFormat("#,###.###");
     }
 
     @NonNull
     @Override
     public ChiPhiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Chỗ này nó sẽ "gọi" file layout "item_transaction_nhom.xml"
-        // (File này mình sẽ tạo ở bước sau)
+
+        
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_transaction_nhom, parent, false);
         return new ChiPhiViewHolder(view);
     }

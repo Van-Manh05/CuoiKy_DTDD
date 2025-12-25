@@ -15,7 +15,7 @@ public class ChiPhi {
         this.phanTramThayDoi = phanTramThayDoi;
     }
 
-    
+
     public int getIconResId() { return iconResId; }
     public String getTenNhom() { return tenNhom; }
     public double getSoTien() { return soTien; }
