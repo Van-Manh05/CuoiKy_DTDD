@@ -63,8 +63,7 @@ public class NapTienActivity extends AppCompatActivity {
 
         walletNames = new ArrayList<>();
         walletIds = new ArrayList<>();
-
-        // Cấu hình Adapter để hiển thị chữ rõ ràng
+        
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, walletNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerWallets.setAdapter(adapter);

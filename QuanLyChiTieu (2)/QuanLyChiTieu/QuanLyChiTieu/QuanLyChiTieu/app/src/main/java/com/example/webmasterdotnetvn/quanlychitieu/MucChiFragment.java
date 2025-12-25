@@ -27,10 +27,10 @@ public class MucChiFragment extends Fragment {
     PieChart pieChart;
     RecyclerView recyclerView;
     ChiPhiAdapter adapter; // DÙNG LẠI ADAPTER CŨ
-    List<ChiPhi> danhSachChiPhi; // DÙNG LẠI MODEL CŨ
+    List<ChiPhi> danhSachChiPhi;
 
     public MucChiFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
