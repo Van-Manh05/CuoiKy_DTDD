@@ -3,80 +3,94 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F8FA"
-    android:fillViewport="true">
+    android:background="#F8F9FA">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="80dp"> <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabTime"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/bg_icon_circle"
-        app:tabIndicator="@null"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="#757575"
-        app:tabBackground="@drawable/selector_tab_pill"
-        app:tabMode="fixed"
-        app:tabGravity="fill"/>
-        <androidx.cardview.widget.CardView
+        android:paddingBottom="80dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="8dp"
-            app:cardPreventCornerOverlap="false">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:background="#FFFFFF">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xin chào,"
+                    android:textColor="#757575"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tvUserNameHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Người dùng"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_money_bee2"
+                android:background="@drawable/bg_circle_white"
+                android:padding="5dp"
+                android:elevation="2dp"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/bg_gradient_card"
-                android:orientation="vertical"
                 android:padding="24dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Số dư hiện tại"
-                    android:textColor="#CCFFFFFF"
-                    android:textSize="14sp" />
+                    android:text="Tổng tài sản"
+                    android:textColor="#B3E5FC"
+                    android:textSize="14sp"/>
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvTotalBalance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_centerVertical="true"
+                    android:text="0 đ"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
 
-                    <TextView
-                        android:id="@+id/tvTotalBalance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="111.000.000 đ"
-                        android:textColor="@color/white"
-                        android:textSize="32sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_visibility"
-                        android:layout_marginStart="10dp"
-                        app:tint="#CCFFFFFF"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#33FFFFFF"
-                    android:layout_marginVertical="16dp"/>
-
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_menu_compass"
+                    android:layout_alignParentEnd="true"
+                    app:tint="#FFFFFF"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -84,133 +98,231 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_arrow_down"
-                                app:tint="#4CAF50"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Tổng thu"
-                                android:textColor="#CCFFFFFF"
-                                android:textSize="12sp"
-                                android:layout_marginStart="4dp"/>
-                        </LinearLayout>
                         <TextView
-                            android:id="@+id/tvTotalIncome"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20.000.000"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="4dp"/>
+                            android:text="Thu nhập"
+                            android:textColor="#B3E5FC"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/tvIncomeCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+ 0 đ"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="end"> <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical">
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_arrow_up"
-                            app:tint="#FF5252"/>
+                        android:gravity="end"
+                        android:orientation="vertical">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tổng chi"
-                            android:textColor="#CCFFFFFF"
-                            android:textSize="12sp"
-                            android:layout_marginStart="4dp"/>
-                    </LinearLayout>
+                            android:text="Chi tiêu"
+                            android:textColor="#FFCDD2"
+                            android:textSize="12sp"/>
                         <TextView
-                            android:id="@+id/tvTotalExpense"
+                            android:id="@+id/tvExpenseCard"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="9.000.000"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="4dp"/>
+                            android:text="- 0 đ"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/white">
-
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="-20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="16dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hạn mức chi tiêu tháng"
+                        android:textStyle="bold"
+                        android:textColor="#333"/>
+                    <TextView
+                        android:id="@+id/tvBudgetPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textColor="#1A237E"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressBarBudget"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="8dp"
+                    android:progressDrawable="@drawable/custom_progress_bg"
+                    android:progress="0"
+                    android:max="100"/>
 
                 <TextView
+                    android:id="@+id/tvBudgetStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cấu trúc chi tiêu"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#37474F"/>
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart"
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:layout_marginTop="16dp"/>
-
+                    android:layout_marginTop="4dp"
+                    android:text="Bạn đang chi tiêu an toàn"
+                    android:textSize="12sp"
+                    android:textColor="#4CAF50"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Tiện ích"
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="10dp">
+            android:padding="10dp"
+            android:weightSum="4">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/btnQuickNapTien"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Giao dịch gần đây"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#37474F"/>
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/stat_sys_download"
+                    app:tint="#4CAF50"
+                    android:background="@drawable/bg_circle_white"
+                    android:elevation="4dp"
+                    android:padding="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Nạp tiền"
+                    android:textSize="12sp"/>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvSeeAll"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/btnQuickRutTien"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Xem tất cả"
-                android:textColor="#2196F3"
-                android:textStyle="bold"/>
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/stat_sys_upload"
+                    app:tint="#F44336"
+                    android:background="@drawable/bg_circle_white"
+                    android:elevation="4dp"
+                    android:padding="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Rút tiền"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnQuickVi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_wallet_gray"
+                    app:tint="#FF9800"
+                    android:background="@drawable/bg_circle_white"
+                    android:elevation="4dp"
+                    android:padding="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Quản lý ví"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnQuickHistory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    app:tint="#2196F3"
+                    android:background="@drawable/bg_circle_white"
+                    android:elevation="4dp"
+                    android:padding="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Lịch sử"
+                    android:textSize="12sp"/>
+            </LinearLayout>
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTransactions"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Phân tích chi tiêu"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false"
-            android:paddingHorizontal="16dp"/>
+            android:layout_margin="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:padding="10dp"/>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

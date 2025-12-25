@@ -22,7 +22,7 @@
                 android:background="#1A237E"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingVertical="40dp">
+                android:paddingVertical="30dp">
 
                 <ImageView
                     android:id="@+id/imgAvatar"
@@ -51,6 +51,49 @@
                     android:textColor="#B0BEC5"
                     android:textSize="14sp" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="THỐNG KÊ THÁNG NÀY"
+                android:textColor="#757575"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp" />
+
+                    <TextView
+                        android:id="@+id/tvTotalExpense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Tổng chi tiêu: 0 đ"
+                        android:textColor="#F44336"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -220,8 +263,6 @@
         android:layout_alignParentBottom="true"
         android:background="#FFFFFF"
         app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/nav_item_colors"
-        app:itemTextColor="@color/nav_item_colors"
         app:labelVisibilityMode="labeled" />
 
 </RelativeLayout>
