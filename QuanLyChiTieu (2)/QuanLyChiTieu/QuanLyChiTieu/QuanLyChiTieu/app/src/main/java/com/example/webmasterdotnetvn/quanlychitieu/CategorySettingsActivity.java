@@ -16,8 +16,8 @@ public class CategorySettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_settings);
 
-        // 1. Ánh xạ View
-        // Lưu ý: Đảm bảo ID trong file XML là 'btnBack' (ImageView)
+        // 1. Ánh xạ viu
+        // Lưu ý: Đảm bảo id trong file XML là 'btnBack' (ImageView)
         ImageView btnBack = findViewById(R.id.btnBack);
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager = findViewById(R.id.viewPager);
