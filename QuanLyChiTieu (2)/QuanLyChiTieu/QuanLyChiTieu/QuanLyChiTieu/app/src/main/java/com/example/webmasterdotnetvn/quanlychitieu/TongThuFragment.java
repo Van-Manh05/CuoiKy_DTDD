@@ -47,7 +47,6 @@ public class TongThuFragment extends Fragment {
         // 2. Cài đặt biểu đồ
         setupPieChart();
 
-        // 3. Nạp dữ liệu biểu đồ (100% Lương)
         loadPieChartData();
 
         // 4. Nạp dữ liệu danh sách (Item Lương)
