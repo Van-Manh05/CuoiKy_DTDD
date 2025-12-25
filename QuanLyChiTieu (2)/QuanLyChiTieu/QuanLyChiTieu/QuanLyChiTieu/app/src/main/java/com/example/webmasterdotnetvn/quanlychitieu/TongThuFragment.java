@@ -80,7 +80,6 @@ public class TongThuFragment extends Fragment {
 
     private void loadPieChartData() {
         ArrayList<PieEntry> entries = new ArrayList<>();
-        // Biểu đồ 100%
         entries.add(new PieEntry(100f, "Lương"));
 
         ArrayList<Integer> colors = new ArrayList<>();
