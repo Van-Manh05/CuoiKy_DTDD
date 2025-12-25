@@ -21,7 +21,7 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="29dp"
         android:src="@drawable/plus"
         app:layout_anchor="@id/bottomNavigationView"
         app:layout_anchorGravity="top|center" />
