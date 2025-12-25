@@ -236,7 +236,7 @@ public class LichSuActivity extends AppCompatActivity {
             this.giaoDichList.clear();
             if (newList != null && !newList.isEmpty()) {
                 String lastDate = "";
-                // Sort list by date before processing if needed, assuming it's pre-sorted for now
+                // So by date before processing if needed, assuming it's pre-sorted for now
                 for (GiaoDich gd : newList) {
                     if (!gd.date.equals(lastDate)) {
                         gd.showDate = true;
