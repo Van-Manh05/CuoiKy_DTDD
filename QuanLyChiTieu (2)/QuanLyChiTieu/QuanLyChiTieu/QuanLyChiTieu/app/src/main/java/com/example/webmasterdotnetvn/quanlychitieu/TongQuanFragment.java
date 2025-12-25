@@ -52,7 +52,7 @@ public class TongQuanFragment extends Fragment {
     private GiaoDichAdapter adapter;
     private DecimalFormat formatter = new DecimalFormat("#,###");
 
-    private int currentTabMode = 1; // 0: Tuần, 1: Tháng, 2: Năm
+    private int currentTabMode = 1; 
 
     // Danh sách các loại tính là Tiền ra (để vẽ biểu đồ chi)
     private final List<String> EXPENSE_TYPES = Arrays.asList("CHI", "ChoVay", "TraNo");

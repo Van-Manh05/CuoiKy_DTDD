@@ -22,7 +22,7 @@ public class TongChiContainerFragment extends Fragment {
     ViewPagerAdapter viewPagerAdapter; // Adapter cũ của bạn
 
     public TongChiContainerFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
