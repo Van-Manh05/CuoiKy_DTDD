@@ -18,7 +18,6 @@ public class ViTienAdapter extends RecyclerView.Adapter<ViTienAdapter.ViTienView
     private DecimalFormat formatter = new DecimalFormat("#,###");
     private OnWalletClickListener listener;
 
-    // Interface mở rộng: Thêm onWalletLongClick (trả về true nếu đã xử lý)
     public interface OnWalletClickListener {
         void onWalletClick(ViTien viTien);
         void onWalletLongClick(ViTien viTien);
@@ -51,8 +50,7 @@ public class ViTienAdapter extends RecyclerView.Adapter<ViTienAdapter.ViTienView
         } else {
             holder.imgIcon.setImageResource(R.drawable.ic_wallet_gray);
         }
-
-        // Click thường -> Xem chi tiết
+        
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) listener.onWalletClick(vi);
         });

@@ -5,7 +5,7 @@ import com.google.firebase.firestore.Exclude;
 public class ViTien {
     private String id;      // ID của document trên Firebase (dùng để Sửa/Xóa)
     private String name;    // Tên ví (Khớp với field 'name' trong Firestore)
-    private double balance; 
+    private double balance;
 
 
     public ViTien() {
