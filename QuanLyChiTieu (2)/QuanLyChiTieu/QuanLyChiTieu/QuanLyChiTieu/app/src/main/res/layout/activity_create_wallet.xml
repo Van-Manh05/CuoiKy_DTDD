@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tạo ví"
-            android:textSize="20sp"
+            android:textSize="19sp"
             android:textStyle="bold"
             android:textColor="#333333"
             android:layout_centerInParent="true"/>
