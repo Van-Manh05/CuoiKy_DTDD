@@ -18,14 +18,14 @@ public class KhamPhaFragment extends Fragment {
     private CardView btnSettingCategory;
     private TextView tvEmail;
 
-    // Constructor rỗng bắt buộc
+
     public KhamPhaFragment() {
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // 1. Gắn layout XML vào Fragment
+        
         View view = inflater.inflate(R.layout.fragment_kham_pha, container, false);
 
 

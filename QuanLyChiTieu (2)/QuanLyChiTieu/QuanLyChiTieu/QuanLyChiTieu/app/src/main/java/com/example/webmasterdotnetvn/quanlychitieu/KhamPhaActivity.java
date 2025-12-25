@@ -55,7 +55,7 @@ public class KhamPhaActivity extends AppCompatActivity {
 
         initViews();
         loadUserInfo();
-        setupPieChart(); 
+        setupPieChart();
         loadChartData();
         setupEvents();
         setupBottomNav();
