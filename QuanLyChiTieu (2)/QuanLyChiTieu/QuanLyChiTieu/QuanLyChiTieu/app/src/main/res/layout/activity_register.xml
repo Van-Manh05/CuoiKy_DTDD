@@ -28,7 +28,7 @@
         <EditText
             android:id="@+id/edtFullNameRegister"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="53dp"
             android:hint="Họ và tên"
             android:background="@drawable/bg_input_signin"
             android:paddingHorizontal="20dp"
