@@ -11,7 +11,7 @@ public class ViTien {
     public ViTien() {
     }
 
-    // 2. Constructor đầy đủ
+    // 2. Constructor đủ
     public ViTien(String id, String name, double balance) {
         this.id = id;
         this.name = name;
