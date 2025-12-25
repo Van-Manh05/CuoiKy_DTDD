@@ -32,11 +32,35 @@ public class MainActivity extends AppCompatActivity {
         setupBottomNavigation();
         setupEvents();
 
-        // Mặc định load màn hình Tổng quan và Hiện FAB
+        // --- XỬ LÝ LOGIC MỞ TAB NGÂN SÁCH TỪ TRANG KHÁC ---
         if (savedInstanceState == null) {
-            loadFragment(new TongQuanFragment());
-            fab.show();
+            handleIntent(getIntent());
         }
+    }
+
+    // Hàm xử lý Intent để quyết định mở tab nào
+    private void handleIntent(Intent intent) {
+        boolean openBudget = intent.getBooleanExtra("open_budget", false);
+
+        if (openBudget) {
+            // Nếu có yêu cầu mở Ngân sách
+            loadFragment(new NganSachFragment());
+            bottomNavigationView.setSelectedItemId(R.id.nav_ngansach);
+            fab.hide(); // Ẩn nút FAB
+        } else {
+            // Mặc định mở Tổng quan
+            loadFragment(new TongQuanFragment());
+            bottomNavigationView.setSelectedItemId(R.id.nav_tongquan);
+            fab.show(); // Hiện nút FAB
+        }
+    }
+
+    // Xử lý khi Activity được gọi lại (SingleTop/SingleTask)
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleIntent(intent);
     }
 
     private void initViews() {
@@ -96,13 +120,16 @@ public class MainActivity extends AppCompatActivity {
         if (bottomNavigationView != null) {
             // Logic để đảm bảo trạng thái đúng khi quay lại từ Activity khác
             int selectedId = bottomNavigationView.getSelectedItemId();
+
             if (selectedId == R.id.nav_tongquan) {
                 fab.show();
             } else if (selectedId == R.id.nav_ngansach) {
                 fab.hide();
             } else {
-                // Nếu từ Tài sản, Lịch sử... quay về thì mặc định về Tổng quan
+                // Nếu đang ở các tab ảo (id cũ) mà quay lại thì về Tổng quan
                 bottomNavigationView.setSelectedItemId(R.id.nav_tongquan);
+                loadFragment(new TongQuanFragment());
+                fab.show();
             }
         }
     }

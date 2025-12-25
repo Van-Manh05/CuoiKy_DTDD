@@ -11,7 +11,8 @@
         android:id="@+id/main_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize" />
+        android:layout_marginBottom="?attr/actionBarSize" >
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -26,10 +27,11 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/plus"
         android:contentDescription="Thêm giao dịch"
-        app:layout_anchor="@id/bottomNavigationView"
-        app:layout_anchorGravity="top|center"
+        android:src="@drawable/plus"
         app:backgroundTint="#4CAF50"
-        app:tint="#FFFFFF" />
+        app:tint="#FFFFFF"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="80dp" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA">
+    android:background="#F8F9FA"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="80dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,6 +87,7 @@
                     android:src="@android:drawable/ic_menu_compass"
                     android:layout_alignParentEnd="true"
                     app:tint="#FFFFFF"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -145,6 +146,7 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp"
             android:layout_marginBottom="20dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,7 +189,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Bạn đang chi tiêu an toàn"
+                    android:text="Đang tính toán..."
                     android:textSize="12sp"
                     android:textColor="#4CAF50"/>
             </LinearLayout>
@@ -323,6 +325,10 @@
                 android:layout_height="300dp"
                 android:padding="10dp"/>
         </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,7 +29,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +71,7 @@ public class KhamPhaActivity extends AppCompatActivity {
         btnLogout = findViewById(R.id.btnLogout);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        // View mới cho biểu đồ
+        // Chart views
         pieChart = findViewById(R.id.pieChart);
         tvTotalExpense = findViewById(R.id.tvTotalExpense);
     }
@@ -88,7 +86,6 @@ public class KhamPhaActivity extends AppCompatActivity {
                         if (task.isSuccessful() && task.getResult() != null) {
                             DocumentSnapshot doc = task.getResult();
                             if (doc.exists()) {
-                                // Kiểm tra cả field "fullName" và "name" để tránh lỗi
                                 String fullName = doc.getString("fullName");
                                 if (fullName == null) fullName = doc.getString("name");
                                 tvUserName.setText(fullName != null ? fullName : "Người dùng");
@@ -98,7 +95,7 @@ public class KhamPhaActivity extends AppCompatActivity {
         }
     }
 
-    // --- PHẦN XỬ LÝ BIỂU ĐỒ (MỚI) ---
+    // --- XỬ LÝ BIỂU ĐỒ ---
     private void setupPieChart() {
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
@@ -111,7 +108,6 @@ public class KhamPhaActivity extends AppCompatActivity {
         pieChart.setCenterTextSize(14f);
         pieChart.animateY(1000);
 
-        // Hiển thị chú thích (Legend)
         pieChart.getLegend().setEnabled(true);
         pieChart.getLegend().setWordWrapEnabled(true);
     }
@@ -120,9 +116,6 @@ public class KhamPhaActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) return;
 
-        // Lấy ngày đầu tháng và cuối tháng này để lọc (Nâng cao)
-        // Hiện tại load toàn bộ để đơn giản, bạn có thể thêm query .whereGreaterThan...
-
         db.collection("users").document(user.getUid()).collection("transactions")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -130,13 +123,10 @@ public class KhamPhaActivity extends AppCompatActivity {
                     double totalExpense = 0;
 
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        // Logic lọc: Chỉ lấy loại "CHI" hoặc loại không phải "Nạp tiền"
-                        // Cần đảm bảo model GiaoDich hoặc dữ liệu trên Firestore có field phân loại
-                        String type = doc.getString("type"); // Ví dụ: "CHI", "THU"
+                        String type = doc.getString("type");
                         String category = doc.getString("category");
                         Double amount = doc.getDouble("amount");
 
-                        // Nếu chưa có field type, ta tạm lọc bằng tên Category
                         boolean isExpense = "CHI".equals(type) || (category != null && !category.equals("Nạp tiền"));
 
                         if (isExpense && amount != null && category != null) {
@@ -168,19 +158,19 @@ public class KhamPhaActivity extends AppCompatActivity {
         PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
-        dataSet.setColors(ColorTemplate.MATERIAL_COLORS); // Màu sắc đẹp mắt
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
 
         PieData data = new PieData(dataSet);
         data.setValueTextSize(12f);
         data.setValueTextColor(Color.WHITE);
 
         pieChart.setData(data);
-        pieChart.invalidate(); // Vẽ lại
+        pieChart.invalidate();
 
         tvTotalExpense.setText("Tổng chi: " + formatter.format(totalExpense) + " đ");
     }
 
-    // --- PHẦN CÀI ĐẶT (GIỮ NGUYÊN) ---
+    // --- CÀI ĐẶT ---
     private void setupEvents() {
         btnCategorySetting.setOnClickListener(v -> startActivity(new Intent(this, CategorySettingsActivity.class)));
         btnWalletSetting.setOnClickListener(v -> startActivity(new Intent(this, QuanLyViActivity.class)));
@@ -256,26 +246,39 @@ public class KhamPhaActivity extends AppCompatActivity {
                 .show();
     }
 
-    // --- CẬP NHẬT BOTTOM NAV (Thêm finish() để không bị chồng activity) ---
+    // --- ĐIỀU HƯỚNG ---
     private void setupBottomNav() {
         bottomNavigationView.setSelectedItemId(R.id.nav_khampha);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
+
             if (itemId == R.id.nav_tongquan) {
                 startActivity(new Intent(this, MainActivity.class));
                 overridePendingTransition(0, 0);
-                finish(); // Quan trọng: Đóng màn hình hiện tại
+                finish();
                 return true;
+
             } else if (itemId == R.id.nav_taisan) {
                 startActivity(new Intent(this, TaisanActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
                 return true;
+
+            } else if (itemId == R.id.nav_ngansach) {
+                // --- CẬP NHẬT: Gửi tín hiệu mở tab Ngân sách ---
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("open_budget", true);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
             } else if (itemId == R.id.nav_lichsu) {
                 startActivity(new Intent(this, LichSuActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
                 return true;
+
             } else if (itemId == R.id.nav_khampha) {
                 return true;
             }

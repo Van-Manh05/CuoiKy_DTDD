@@ -4,14 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-// import android.widget.Toast; // Mở comment nếu muốn hiện thông báo khi nhấn giữ
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,7 +24,7 @@ public class TaisanActivity extends AppCompatActivity {
     private ViTienAdapter adapter;
     private List<ViTien> danhSachVi;
     private BottomNavigationView bottomNavigationView;
-    private FloatingActionButton fab;
+
     private TextView tvTongTaiSan, tvViCoBanTitle;
     private View btnTaoVi, btnNapTien;
 
@@ -59,17 +57,14 @@ public class TaisanActivity extends AppCompatActivity {
         btnTaoVi = findViewById(R.id.btnTaoVi);
         btnNapTien = findViewById(R.id.btnNapTien);
         bottomNavigationView = findViewById(R.id.bottomNavigationView_taisan);
-        fab = findViewById(R.id.fab_taisan);
     }
 
     private void setupRecyclerView() {
         danhSachVi = new ArrayList<>();
 
-        // CẬP NHẬT: Thêm override cho onWalletLongClick để khớp với Adapter mới
         adapter = new ViTienAdapter(danhSachVi, new ViTienAdapter.OnWalletClickListener() {
             @Override
             public void onWalletClick(ViTien viTien) {
-                // Click thường: Mở chi tiết ví
                 Intent intent = new Intent(TaisanActivity.this, ChiTietViActivity.class);
                 intent.putExtra("walletId", viTien.getId());
                 intent.putExtra("walletName", viTien.getName());
@@ -79,11 +74,7 @@ public class TaisanActivity extends AppCompatActivity {
 
             @Override
             public void onWalletLongClick(ViTien viTien) {
-                // Click giữ: Ở màn hình Tổng quan tài sản, ta thường KHÔNG cho phép xóa nhanh.
-                // Việc xóa nên thực hiện trong màn hình "Quản lý ví" để an toàn.
-                // Vì vậy hàm này để trống hoặc hiện thông báo nhỏ.
-
-                // Toast.makeText(TaisanActivity.this, "Vào 'Quản lý ví' để chỉnh sửa hoặc xóa", Toast.LENGTH_SHORT).show();
+                // Xử lý sự kiện nhấn giữ nếu cần
             }
         });
 
@@ -140,21 +131,39 @@ public class TaisanActivity extends AppCompatActivity {
 
     private void setupBottomNavigation() {
         bottomNavigationView.setSelectedItemId(R.id.nav_taisan);
-        fab.setOnClickListener(v -> startActivity(new Intent(this, NapTienActivity.class)));
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
+
             if (itemId == R.id.nav_tongquan) {
                 startActivity(new Intent(this, MainActivity.class));
-                overridePendingTransition(0, 0); finish(); return true;
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
             } else if (itemId == R.id.nav_taisan) {
                 return true;
+
+            } else if (itemId == R.id.nav_ngansach) {
+                // --- CẬP NHẬT QUAN TRỌNG: Gửi tín hiệu mở tab Ngân sách ---
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("open_budget", true);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
             } else if (itemId == R.id.nav_lichsu) {
                 startActivity(new Intent(this, LichSuActivity.class));
-                overridePendingTransition(0, 0); finish(); return true;
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
             } else if (itemId == R.id.nav_khampha) {
                 startActivity(new Intent(this, KhamPhaActivity.class));
-                overridePendingTransition(0, 0); finish(); return true;
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
             }
             return false;
         });

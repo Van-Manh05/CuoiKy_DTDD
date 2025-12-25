@@ -38,7 +38,6 @@ public class LichSuActivity extends AppCompatActivity {
     private MaterialButton btnChonVi, btnChonMuc;
 
     private BottomNavigationView bottomNavigationView;
-    // Đã xóa FloatingActionButton fab theo yêu cầu
 
     // Data & Logic
     private FirebaseFirestore db;
@@ -86,7 +85,6 @@ public class LichSuActivity extends AppCompatActivity {
         btnChonMuc = findViewById(R.id.btnChonMuc);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_lich_su);
-        // Đã xóa ánh xạ FAB
     }
 
     private void setupRecyclerView() {
@@ -134,9 +132,10 @@ public class LichSuActivity extends AppCompatActivity {
                 return true;
 
             } else if (itemId == R.id.nav_ngansach) {
-                // Chuyển về MainActivity (nơi chứa Fragment Ngân sách)
-                // Lưu ý: Mặc định sẽ về Tổng quan, cần xử lý thêm ở MainActivity nếu muốn mở thẳng tab Ngân sách
-                startActivity(new Intent(this, MainActivity.class));
+                // --- CẬP NHẬT QUAN TRỌNG: Gửi tín hiệu mở tab Ngân sách ---
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("open_budget", true);
+                startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
                 return true;
