@@ -16,14 +16,14 @@ public class ViTienAdapter extends RecyclerView.Adapter<ViTienAdapter.ViTienView
 
     private List<ViTien> mList;
     private DecimalFormat formatter = new DecimalFormat("#,###");
-    private OnWalletClickListener listener; // Khai báo listener
+    private OnWalletClickListener listener;
 
-    // Interface để gửi sự kiện click ra ngoài Activity
+    // Interface mở rộng: Thêm onWalletLongClick (trả về true nếu đã xử lý)
     public interface OnWalletClickListener {
         void onWalletClick(ViTien viTien);
+        void onWalletLongClick(ViTien viTien); // Mới thêm
     }
 
-    // Cập nhật Constructor để nhận listener
     public ViTienAdapter(List<ViTien> mList, OnWalletClickListener listener) {
         this.mList = mList;
         this.listener = listener;
@@ -44,22 +44,27 @@ public class ViTienAdapter extends RecyclerView.Adapter<ViTienAdapter.ViTienView
         holder.tvName.setText(vi.getName());
         holder.tvBalance.setText(formatter.format(vi.getBalance()) + " đ");
 
-        // Logic chọn icon thông minh
+        // Logic Icon
         String nameLower = vi.getName().toLowerCase();
-        if (nameLower.contains("momo")) {
-            holder.imgIcon.setImageResource(R.drawable.ic_wallet_gray); // Bạn nên thêm icon momo nếu có
-            // holder.imgIcon.setColorFilter(Color.parseColor("#A50064")); // Ví dụ đổi màu hồng
-        } else if (nameLower.contains("zalo")) {
-            holder.imgIcon.setImageResource(R.drawable.ic_wallet_gray);
-            // holder.imgIcon.setColorFilter(Color.parseColor("#0068FF")); // Ví dụ đổi màu xanh
-        } else if (nameLower.contains("ngân hàng") || nameLower.contains("bank")) {
+        if (nameLower.contains("ngân hàng") || nameLower.contains("bank")) {
             holder.imgIcon.setImageResource(R.drawable.ic_wallet_gray);
         } else {
             holder.imgIcon.setImageResource(R.drawable.ic_wallet_gray);
         }
 
-        // BẮT SỰ KIỆN CLICK
-        holder.itemView.setOnClickListener(v -> listener.onWalletClick(vi));
+        // Click thường -> Xem chi tiết
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) listener.onWalletClick(vi);
+        });
+
+        // Nhấn giữ (Long Click) -> Xóa
+        holder.itemView.setOnLongClickListener(v -> {
+            if (listener != null) {
+                listener.onWalletLongClick(vi);
+                return true; // Đã xử lý sự kiện
+            }
+            return false;
+        });
     }
 
     @Override

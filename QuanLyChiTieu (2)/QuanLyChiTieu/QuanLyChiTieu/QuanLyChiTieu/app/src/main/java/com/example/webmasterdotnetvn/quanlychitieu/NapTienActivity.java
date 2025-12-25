@@ -30,15 +30,18 @@ public class NapTienActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private String uid;
 
-    // Danh sách lưu ID và Tên ví để xử lý
     private List<String> walletNames;
     private List<String> walletIds;
     private ArrayAdapter<String> adapter;
+
+    private String preSelectedWalletName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nap_tien);
+
+        preSelectedWalletName = getIntent().getStringExtra("preSelectedWalletName");
 
         db = FirebaseFirestore.getInstance();
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
@@ -61,8 +64,9 @@ public class NapTienActivity extends AppCompatActivity {
         walletNames = new ArrayList<>();
         walletIds = new ArrayList<>();
 
-        // Adapter cho Spinner
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, walletNames);
+        // Cấu hình Adapter để hiển thị chữ rõ ràng
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, walletNames);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerWallets.setAdapter(adapter);
     }
 
@@ -83,6 +87,14 @@ public class NapTienActivity extends AppCompatActivity {
                         }
                     }
                     adapter.notifyDataSetChanged();
+
+                    // Tự động chọn ví nếu được truyền từ màn hình Chi tiết
+                    if (preSelectedWalletName != null) {
+                        int position = walletNames.indexOf(preSelectedWalletName);
+                        if (position >= 0) {
+                            spinnerWallets.setSelection(position);
+                        }
+                    }
                 });
     }
 
@@ -99,41 +111,52 @@ public class NapTienActivity extends AppCompatActivity {
             return;
         }
 
-        double amount = Double.parseDouble(amountStr);
+        // --- SỬA LỖI FINAL VARIABLE ---
+        double tempAmount = 0;
+        try {
+            // Xử lý chuỗi nhập vào (loại bỏ dấu chấm/phẩy format nếu có)
+            tempAmount = Double.parseDouble(amountStr.replace(",", "").replace(".", ""));
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Số tiền không hợp lệ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Tạo biến final để dùng trong Lambda bên dưới
+        final double finalAmount = tempAmount;
+        // ------------------------------
+
         int selectedIndex = spinnerWallets.getSelectedItemPosition();
+        if (selectedIndex < 0 || selectedIndex >= walletIds.size()) return;
+
         String selectedWalletId = walletIds.get(selectedIndex);
         String selectedWalletName = walletNames.get(selectedIndex);
 
         btnConfirm.setEnabled(false);
         btnConfirm.setText("Đang xử lý...");
 
-        // 1. Cập nhật Số dư Ví (Cộng thêm tiền)
+        // 1. Cập nhật Số dư
         db.collection("users").document(uid).collection("wallets")
                 .document(selectedWalletId)
-                .update("balance", FieldValue.increment(amount))
+                .update("balance", FieldValue.increment(finalAmount)) // Dùng finalAmount
                 .addOnSuccessListener(aVoid -> {
-
-                    // 2. Lưu lịch sử giao dịch (Để hiện trong thống kê)
-                    saveTransactionHistory(amount, selectedWalletName);
-
+                    // 2. Lưu lịch sử
+                    saveTransactionHistory(finalAmount, selectedWalletName); // Dùng finalAmount
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(this, "Lỗi nạp tiền: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     btnConfirm.setEnabled(true);
                     btnConfirm.setText("Xác nhận nạp tiền");
                 });
     }
 
     private void saveTransactionHistory(double amount, String walletName) {
-        // Tạo đối tượng giao dịch loại "THU" (Thu nhập)
-        // Category là "Nạp tiền" để dễ phân biệt
         GiaoDich gd = new GiaoDich(amount, "Nạp tiền", "Nạp tiền vào ví " + walletName, new Date(), "THU");
 
         db.collection("users").document(uid).collection("transactions")
                 .add(gd)
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(this, "Nạp tiền thành công!", Toast.LENGTH_SHORT).show();
-                    finish(); // Đóng màn hình
+                    finish();
                 });
     }
 }
