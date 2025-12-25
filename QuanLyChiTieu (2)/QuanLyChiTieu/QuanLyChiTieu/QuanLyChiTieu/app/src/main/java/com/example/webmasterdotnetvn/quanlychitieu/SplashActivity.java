@@ -27,10 +27,10 @@ public class SplashActivity extends AppCompatActivity {
 
         Intent intent;
         if (user == null) {
-            // Chưa đăng nhập -> Chuyển qua màn hình Đăng nhập
+            // Chưa đăng nhập -> Chuyển qua màn Đăng nhập
             intent = new Intent(SplashActivity.this, LoginActivity.class);
         } else {
-            // Đã đăng nhập -> Chuyển thẳng vào màn hình Chính
+            // Đã đăng nhập -> Chuyển thẳng vào hình Chính
             intent = new Intent(SplashActivity.this, MainActivity.class);
         }
 
