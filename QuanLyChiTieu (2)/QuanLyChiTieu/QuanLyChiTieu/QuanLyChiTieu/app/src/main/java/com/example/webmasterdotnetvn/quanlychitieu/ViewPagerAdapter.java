@@ -24,6 +24,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 2; // Có tổng cộng 2 tab
+        return 2; // Có tổng 2 tab
     }
 }
