@@ -22,7 +22,10 @@ public class ChiTietViActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
     private String walletId, walletName;
+
+    // Đưa biến này ra ngoài để dùng chung cho cả onCreate và loadRealTimeBalance
     private double currentBalance = 0;
+
     private DecimalFormat formatter = new DecimalFormat("#,###");
 
     @Override
@@ -30,14 +33,19 @@ public class ChiTietViActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chi_tiet_vi);
 
-        // Nhận dữ liệu từ TaisanActivity
+        // Nhận dữ liệu
         walletId = getIntent().getStringExtra("walletId");
         walletName = getIntent().getStringExtra("walletName");
+
+        // Gán vào biến toàn cục
         currentBalance = getIntent().getDoubleExtra("walletBalance", 0);
 
         db = FirebaseFirestore.getInstance();
         initViews();
-        setupData();
+
+        tvName.setText(walletName);
+        tvBalance.setText(formatter.format(currentBalance) + " đ");
+
         setupEvents();
     }
 
@@ -49,35 +57,31 @@ public class ChiTietViActivity extends AppCompatActivity {
         btnWithdraw = findViewById(R.id.btnWithdraw);
     }
 
-    private void setupData() {
-        tvName.setText(walletName);
-        tvBalance.setText(formatter.format(currentBalance) + " đ");
-
-        // (Nâng cao) Tại đây bạn có thể gọi Firestore để load lịch sử giao dịch
-        // dựa theo filter note chứa tên ví, hoặc field walletId nếu sau này bạn thêm vào.
-    }
-
     private void setupEvents() {
         btnBack.setOnClickListener(v -> finish());
 
-        // Nút Nạp tiền: Chuyển sang NapTienActivity và tự chọn ví này
+        // 1. Nút NẠP TIỀN -> Chuyển sang NapTienActivity
         btnQuickTopUp.setOnClickListener(v -> {
             Intent intent = new Intent(ChiTietViActivity.this, NapTienActivity.class);
-            // Truyền tên ví sang để bên kia tự chọn (Cần update NapTienActivity để xử lý việc này)
             intent.putExtra("preSelectedWalletName", walletName);
             startActivity(intent);
         });
 
+        // 2. Nút RÚT TIỀN (ĐÃ CẬP NHẬT) -> Chuyển sang RutTienActivity
         btnWithdraw.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng Rút tiền đang phát triển", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(ChiTietViActivity.this, RutTienActivity.class);
+            intent.putExtra("walletId", walletId);
+            intent.putExtra("walletName", walletName);
+            // Quan trọng: Truyền số dư mới nhất sang để bên kia kiểm tra
+            intent.putExtra("walletBalance", currentBalance);
+            startActivity(intent);
         });
     }
 
-    // Khi quay lại từ màn hình nạp tiền, cần reload lại số dư mới
     @Override
     protected void onResume() {
         super.onResume();
-        loadRealTimeBalance();
+        loadRealTimeBalance(); // Cập nhật lại số dư khi quay lại từ màn hình Nạp/Rút
     }
 
     private void loadRealTimeBalance() {
@@ -89,6 +93,8 @@ public class ChiTietViActivity extends AppCompatActivity {
                         if (documentSnapshot.exists()) {
                             Double bal = documentSnapshot.getDouble("balance");
                             if (bal != null) {
+                                // Cập nhật biến toàn cục để nút Rút tiền dùng số mới nhất
+                                currentBalance = bal;
                                 tvBalance.setText(formatter.format(bal) + " đ");
                             }
                         }

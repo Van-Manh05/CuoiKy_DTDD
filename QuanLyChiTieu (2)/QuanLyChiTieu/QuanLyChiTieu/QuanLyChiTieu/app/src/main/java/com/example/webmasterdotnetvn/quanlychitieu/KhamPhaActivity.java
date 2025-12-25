@@ -1,6 +1,7 @@
 package com.example.webmasterdotnetvn.quanlychitieu;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -12,6 +13,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
@@ -19,15 +25,26 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class KhamPhaActivity extends AppCompatActivity {
 
-    private TextView tvUserName, tvUserEmail;
+    // Views
+    private TextView tvUserName, tvUserEmail, tvTotalExpense;
     private LinearLayout btnCategorySetting, btnWalletSetting, btnChangePassword, btnLogout;
     private BottomNavigationView bottomNavigationView;
+    private PieChart pieChart;
 
+    // Firebase & Data
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private DecimalFormat formatter = new DecimalFormat("#,###");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +56,8 @@ public class KhamPhaActivity extends AppCompatActivity {
 
         initViews();
         loadUserInfo();
+        setupPieChart(); // Cấu hình biểu đồ
+        loadChartData(); // Tải dữ liệu biểu đồ
         setupEvents();
         setupBottomNav();
     }
@@ -51,6 +70,10 @@ public class KhamPhaActivity extends AppCompatActivity {
         btnChangePassword = findViewById(R.id.btnChangePassword);
         btnLogout = findViewById(R.id.btnLogout);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        // Chart views
+        pieChart = findViewById(R.id.pieChart);
+        tvTotalExpense = findViewById(R.id.tvTotalExpense);
     }
 
     private void loadUserInfo() {
@@ -64,6 +87,7 @@ public class KhamPhaActivity extends AppCompatActivity {
                             DocumentSnapshot doc = task.getResult();
                             if (doc.exists()) {
                                 String fullName = doc.getString("fullName");
+                                if (fullName == null) fullName = doc.getString("name");
                                 tvUserName.setText(fullName != null ? fullName : "Người dùng");
                             }
                         }
@@ -71,32 +95,93 @@ public class KhamPhaActivity extends AppCompatActivity {
         }
     }
 
+    // --- XỬ LÝ BIỂU ĐỒ ---
+    private void setupPieChart() {
+        pieChart.setUsePercentValues(true);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setExtraOffsets(5, 10, 5, 5);
+        pieChart.setDragDecelerationFrictionCoef(0.95f);
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setHoleColor(Color.WHITE);
+        pieChart.setTransparentCircleRadius(61f);
+        pieChart.setCenterText("Chi tiêu\nTháng này");
+        pieChart.setCenterTextSize(14f);
+        pieChart.animateY(1000);
+
+        pieChart.getLegend().setEnabled(true);
+        pieChart.getLegend().setWordWrapEnabled(true);
+    }
+
+    private void loadChartData() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) return;
+
+        db.collection("users").document(user.getUid()).collection("transactions")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    Map<String, Double> categoryMap = new HashMap<>();
+                    double totalExpense = 0;
+
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        String type = doc.getString("type");
+                        String category = doc.getString("category");
+                        Double amount = doc.getDouble("amount");
+
+                        boolean isExpense = "CHI".equals(type) || (category != null && !category.equals("Nạp tiền"));
+
+                        if (isExpense && amount != null && category != null) {
+                            totalExpense += amount;
+                            if (categoryMap.containsKey(category)) {
+                                categoryMap.put(category, categoryMap.get(category) + amount);
+                            } else {
+                                categoryMap.put(category, amount);
+                            }
+                        }
+                    }
+
+                    showDataOnChart(categoryMap, totalExpense);
+                });
+    }
+
+    private void showDataOnChart(Map<String, Double> categoryMap, double totalExpense) {
+        List<PieEntry> entries = new ArrayList<>();
+        for (String key : categoryMap.keySet()) {
+            float value = categoryMap.get(key).floatValue();
+            entries.add(new PieEntry(value, key));
+        }
+
+        if (entries.isEmpty()) {
+            pieChart.setCenterText("Chưa có\ndữ liệu");
+            return;
+        }
+
+        PieDataSet dataSet = new PieDataSet(entries, "");
+        dataSet.setSliceSpace(3f);
+        dataSet.setSelectionShift(5f);
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        PieData data = new PieData(dataSet);
+        data.setValueTextSize(12f);
+        data.setValueTextColor(Color.WHITE);
+
+        pieChart.setData(data);
+        pieChart.invalidate();
+
+        tvTotalExpense.setText("Tổng chi: " + formatter.format(totalExpense) + " đ");
+    }
+
+    // --- CÀI ĐẶT ---
     private void setupEvents() {
-        // 1. Cài đặt danh mục
-        btnCategorySetting.setOnClickListener(v -> {
-            Intent intent = new Intent(KhamPhaActivity.this, CategorySettingsActivity.class);
-            startActivity(intent);
-        });
-
-        // 2. Quản lý Ví (MỚI)
-        btnWalletSetting.setOnClickListener(v -> {
-            Intent intent = new Intent(KhamPhaActivity.this, QuanLyViActivity.class);
-            startActivity(intent);
-        });
-
-        // 3. Đổi mật khẩu (MỚI)
+        btnCategorySetting.setOnClickListener(v -> startActivity(new Intent(this, CategorySettingsActivity.class)));
+        btnWalletSetting.setOnClickListener(v -> startActivity(new Intent(this, QuanLyViActivity.class)));
         btnChangePassword.setOnClickListener(v -> showChangePasswordDialog());
-
-        // 4. Đăng xuất
         btnLogout.setOnClickListener(v -> showLogoutDialog());
     }
 
-    // --- CHỨC NĂNG ĐỔI MẬT KHẨU ---
     private void showChangePasswordDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Đổi mật khẩu");
 
-        // Tạo layout chứa 2 ô nhập
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(50, 40, 50, 10);
@@ -129,8 +214,6 @@ public class KhamPhaActivity extends AppCompatActivity {
                 Toast.makeText(this, "Mật khẩu mới phải từ 6 ký tự trở lên", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            // Cần xác thực lại trước khi đổi mật khẩu
             AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), oldPass);
             user.reauthenticate(credential).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
@@ -145,11 +228,8 @@ public class KhamPhaActivity extends AppCompatActivity {
                     Toast.makeText(this, "Mật khẩu cũ không đúng", Toast.LENGTH_SHORT).show();
                 }
             });
-        } else {
-            Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
         }
     }
-    // --------------------------------
 
     private void showLogoutDialog() {
         new AlertDialog.Builder(this)
@@ -157,7 +237,7 @@ public class KhamPhaActivity extends AppCompatActivity {
                 .setMessage("Bạn có chắc chắn muốn đăng xuất không?")
                 .setPositiveButton("Đăng xuất", (dialog, which) -> {
                     mAuth.signOut();
-                    Intent intent = new Intent(KhamPhaActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(this, LoginActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
@@ -166,22 +246,39 @@ public class KhamPhaActivity extends AppCompatActivity {
                 .show();
     }
 
+    // --- ĐIỀU HƯỚNG ---
     private void setupBottomNav() {
         bottomNavigationView.setSelectedItemId(R.id.nav_khampha);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
+
             if (itemId == R.id.nav_tongquan) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
                 overridePendingTransition(0, 0);
+                finish();
                 return true;
+
             } else if (itemId == R.id.nav_taisan) {
-                startActivity(new Intent(getApplicationContext(), TaisanActivity.class));
+                startActivity(new Intent(this, TaisanActivity.class));
                 overridePendingTransition(0, 0);
+                finish();
                 return true;
+
+            } else if (itemId == R.id.nav_ngansach) {
+                // --- CẬP NHẬT: Gửi tín hiệu mở tab Ngân sách ---
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("open_budget", true);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+
             } else if (itemId == R.id.nav_lichsu) {
-                startActivity(new Intent(getApplicationContext(), LichSuActivity.class));
+                startActivity(new Intent(this, LichSuActivity.class));
                 overridePendingTransition(0, 0);
+                finish();
                 return true;
+
             } else if (itemId == R.id.nav_khampha) {
                 return true;
             }
