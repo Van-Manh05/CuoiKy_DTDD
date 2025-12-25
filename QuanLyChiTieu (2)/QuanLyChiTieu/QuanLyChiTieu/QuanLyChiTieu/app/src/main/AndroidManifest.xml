@@ -67,6 +67,9 @@
 
         <activity android:name=".ChiTietViActivity" android:exported="false" />
 
+        <activity android:name=".RutTienActivity" android:exported="false" />
+
+
     </application>
 
 </manifest>
