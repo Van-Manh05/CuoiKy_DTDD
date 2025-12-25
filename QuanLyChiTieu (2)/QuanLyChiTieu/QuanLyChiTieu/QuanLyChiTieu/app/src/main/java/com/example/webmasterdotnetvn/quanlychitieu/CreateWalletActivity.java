@@ -30,10 +30,10 @@ public class CreateWalletActivity extends AppCompatActivity {
             finish();
         });
 
-        // 3. Xử lý bấm chọn loại ví
+
         cardViCoBan.setOnClickListener(v -> {
             Toast.makeText(this, "Chọn Ví Cơ Bản", Toast.LENGTH_SHORT).show();
-            // (Sau này: Code chuyển sang màn hình nhập thông tin)
+            
         });
 
         cardTheTinDung.setOnClickListener(v -> {
