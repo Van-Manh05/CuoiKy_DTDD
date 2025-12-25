@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1030555536842",
+    "project_id": "quanlychitieuapp-5fef4",
+    "storage_bucket": "quanlychitieuapp-5fef4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030555536842:android:65704fc22a07dc1f701333",
+        "android_client_info": {
+          "package_name": "com.example.webmasterdotnetvn.quanlychitieu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqwEh-ZikFPi3EDk2WZNJDZSTw52kgLbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
