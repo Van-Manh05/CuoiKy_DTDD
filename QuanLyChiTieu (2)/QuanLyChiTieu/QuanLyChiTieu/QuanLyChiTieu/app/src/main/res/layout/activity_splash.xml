@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_height="199dp"
         android:src="@drawable/ic_money_bee2"
         android:layout_marginBottom="24dp" />
 
