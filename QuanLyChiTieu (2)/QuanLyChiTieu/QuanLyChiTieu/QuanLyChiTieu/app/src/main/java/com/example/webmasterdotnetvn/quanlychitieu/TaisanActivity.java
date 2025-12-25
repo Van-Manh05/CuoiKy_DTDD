@@ -74,7 +74,7 @@ public class TaisanActivity extends AppCompatActivity {
 
             @Override
             public void onWalletLongClick(ViTien viTien) {
-                // Xử lý sự kiện nhấn giữ nếu cần
+
             }
         });
 
