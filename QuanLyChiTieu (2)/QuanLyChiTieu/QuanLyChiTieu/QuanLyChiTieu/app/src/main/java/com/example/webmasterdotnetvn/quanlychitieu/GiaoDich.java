@@ -11,10 +11,10 @@ public class GiaoDich implements Serializable {
     private Date date;        // Ngày tháng (Firebase tự map Timestamp sang Date)
     private String type;      // Loại: "THU" hoặc "CHI"
 
-    // --- QUAN TRỌNG: Constructor rỗng bắt buộc cho Firebase ---
+    
     public GiaoDich() { }
 
-    // Constructor đầy đủ để tạo dữ liệu từ code Java
+
     public GiaoDich(double amount, String category, String note, Date date, String type) {
         this.amount = amount;
         this.category = category;

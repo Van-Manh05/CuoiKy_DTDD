@@ -25,7 +25,7 @@ public class CreateWalletActivity extends AppCompatActivity {
         cardViCoBan = findViewById(R.id.cardViCoBan);
         cardTheTinDung = findViewById(R.id.cardTheTinDung);
         cardViVayNo = findViewById(R.id.cardViVayNo);
-        
+
         btnBack.setOnClickListener(v -> {
             finish();
         });
