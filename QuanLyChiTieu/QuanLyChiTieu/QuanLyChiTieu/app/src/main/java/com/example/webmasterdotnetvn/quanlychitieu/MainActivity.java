@@ -32,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
         setupBottomNavigation();
         setupEvents();
 
+<<<<<<< HEAD
         // --- XỬ LÝ LOGIC MỞ TAB NGÂN SÁCH TỪ TRANG KHÁC ---
+=======
+        // Mặc định load màn hình Tổng quan cu dự án
+>>>>>>> ec08ca4422ff8421f83dcec549680b6d7778bca3
         if (savedInstanceState == null) {
             handleIntent(getIntent());
         }
