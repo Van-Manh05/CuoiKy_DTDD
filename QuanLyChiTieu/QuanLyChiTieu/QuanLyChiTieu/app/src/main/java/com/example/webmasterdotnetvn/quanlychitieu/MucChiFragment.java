@@ -75,6 +75,7 @@ public class MucChiFragment extends Fragment {
         danhSachChiPhi.add(new ChiPhi(R.drawable.ic_electricity_bill, "Hoá đơn điện", 6000000, 6000000));
         danhSachChiPhi.add(new ChiPhi(R.drawable.ic_eat_restaurant, "Ăn nhà hàng", 2000000, 2000000));
         danhSachChiPhi.add(new ChiPhi(R.drawable.ic_coffee, "Cà phê", 1000000, 1000000));
+        danhSachChiPhi.add(new ChiPhi(R.drawable.ic_coffee, "Cà phê", 1000000, 1000000));
         // (Mình dùng tạm mấy icon có sẵn, bạn có thể đổi)
 
     }
