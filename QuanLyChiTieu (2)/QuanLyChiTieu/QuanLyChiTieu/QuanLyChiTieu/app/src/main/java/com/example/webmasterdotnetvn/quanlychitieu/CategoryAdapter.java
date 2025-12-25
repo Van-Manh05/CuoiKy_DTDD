@@ -43,7 +43,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         Category category = mList.get(position);
         if (category == null) return;
 
-        
+
         holder.tvName.setText(category.getName());
 
         // 2. Xử lý sự kiện Click

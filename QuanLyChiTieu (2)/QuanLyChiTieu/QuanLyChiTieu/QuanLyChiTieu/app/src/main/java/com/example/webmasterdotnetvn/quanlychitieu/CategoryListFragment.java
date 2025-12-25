@@ -37,8 +37,8 @@ public class CategoryListFragment extends Fragment {
     private FirebaseFirestore db;
     private String uid;
 
-    private int typeInt; // 0: Chi, 1: Thu
-    private String typeString; // "CHI" hoặc "THU" (để lưu lên Firebase)
+    private int typeInt; 
+    private String typeString;
 
     // Phương thức tạo Fragment với tham số
     public static CategoryListFragment newInstance(int type) {
