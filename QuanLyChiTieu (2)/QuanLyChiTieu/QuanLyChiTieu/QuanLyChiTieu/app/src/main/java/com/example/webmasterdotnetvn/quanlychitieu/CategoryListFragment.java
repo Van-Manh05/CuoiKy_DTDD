@@ -40,7 +40,7 @@ public class CategoryListFragment extends Fragment {
     private int typeInt; 
     private String typeString;
 
-    // Phương thức tạo Fragment với tham số
+    // Phương thức tạo Fragment với t số
     public static CategoryListFragment newInstance(int type) {
         CategoryListFragment fragment = new CategoryListFragment();
         Bundle args = new Bundle();
