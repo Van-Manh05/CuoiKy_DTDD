@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <FrameLayout
-            android:layout_width="48dp"
+            android:layout_width="47dp"
             android:layout_height="48dp"
             android:background="@drawable/bg_icon_circle">
 
