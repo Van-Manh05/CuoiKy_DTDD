@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        // Bước 1: Tạo tài khoản Auth thành công
+                        // Bước 1: Tạo tài khoản Auth 
                         FirebaseUser user = mAuth.getCurrentUser();
 
                         // Bước 2: Lưu thêm thông tin (Họ tên) vào Firestore Database
