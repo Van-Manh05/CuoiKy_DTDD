@@ -28,8 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // --- TỰ ĐỘNG ĐĂNG NHẬP ---
-        // Kiểm tra xem người dùng đã đăng nhập từ trước chưa
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             // Nếu đã đăng nhập rồi -> Chuyển thẳng vào màn hình chính

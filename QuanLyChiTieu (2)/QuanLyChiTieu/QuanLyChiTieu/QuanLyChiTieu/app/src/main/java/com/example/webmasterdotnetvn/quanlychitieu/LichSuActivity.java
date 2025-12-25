@@ -58,7 +58,7 @@ public class LichSuActivity extends AppCompatActivity {
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        
+
         tvDateRange = findViewById(R.id.tvDateRange);
         ImageView arrowLeft = findViewById(R.id.arrow_left_date);
         ImageView arrowRight = findViewById(R.id.arrow_right_date);
