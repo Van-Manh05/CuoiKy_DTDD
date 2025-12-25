@@ -14,7 +14,7 @@
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="48dp"
+            android:layout_width="47dp"
             android:layout_height="48dp"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_close"
