@@ -53,7 +53,7 @@ public class GiaoDichAdapter extends RecyclerView.Adapter<GiaoDichAdapter.GiaoDi
 
 
         holder.itemView.setOnClickListener(v -> {
-            
+
         });
     }
 
