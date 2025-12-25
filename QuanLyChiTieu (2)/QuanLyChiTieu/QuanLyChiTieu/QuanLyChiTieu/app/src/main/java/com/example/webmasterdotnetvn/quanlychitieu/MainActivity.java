@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
     BottomNavigationView bottomNavigationView;
 
-    // Khai báo FirebaseAuth để kiểm tra trạng thái
+    
     private FirebaseAuth mAuth;
 
     @Override
