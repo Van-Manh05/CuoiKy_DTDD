@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/nav_tongquan"
         android:title="Tổng quan"
-        android:icon="@android:drawable/ic_menu_view"
-        android:checked="true" />
+        android:icon="@android:drawable/ic_menu_view" />
 
     <item
         android:id="@+id/nav_taisan"
@@ -12,8 +12,9 @@
         android:icon="@android:drawable/ic_menu_save" />
 
     <item
-        android:id="@+id/placeholder"
-        android:title="" />
+        android:id="@+id/nav_ngansach"
+        android:title="Ngân sách"
+        android:icon="@android:drawable/ic_menu_my_calendar" />
 
     <item
         android:id="@+id/nav_lichsu"
