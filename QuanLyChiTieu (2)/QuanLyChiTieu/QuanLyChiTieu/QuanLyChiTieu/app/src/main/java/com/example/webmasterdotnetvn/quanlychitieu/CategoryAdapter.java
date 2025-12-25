@@ -19,7 +19,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     private List<Category> mList;
     private ICategoryListener listener;
 
-    // Interface để gửi sự kiện ra ngoài (cho Fragment xử lý)
+
     public interface ICategoryListener {
         void onEditClick(Category category);
         void onDeleteClick(Category category);
@@ -33,7 +33,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Đảm bảo file layout tên là item_category.xml
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category, parent, false);
         return new CategoryViewHolder(view);
     }
@@ -43,7 +43,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         Category category = mList.get(position);
         if (category == null) return;
 
-        // 1. Hiển thị tên
+        
         holder.tvName.setText(category.getName());
 
         // 2. Xử lý sự kiện Click
