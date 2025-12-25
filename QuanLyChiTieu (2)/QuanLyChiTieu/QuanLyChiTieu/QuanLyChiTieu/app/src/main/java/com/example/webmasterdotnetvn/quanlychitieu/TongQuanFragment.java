@@ -54,9 +54,9 @@ public class TongQuanFragment extends Fragment {
 
     private int currentTabMode = 1; // 0: Tuần, 1: Tháng, 2: Năm
 
-    // Danh sách các loại tính là TIỀN RA (để vẽ biểu đồ chi)
+    // Danh sách các loại tính là Tiền ra (để vẽ biểu đồ chi)
     private final List<String> EXPENSE_TYPES = Arrays.asList("CHI", "ChoVay", "TraNo");
-    // Danh sách các loại tính là TIỀN VÀO
+    // Danh sách các loại tính là Tền vào
     private final List<String> INCOME_TYPES = Arrays.asList("THU", "DiVay", "ThuNo");
 
     @Nullable
