@@ -14,9 +14,6 @@ public class CategoryPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        // Position đổ về thứ tự của Tab (bắt đầu từ 0)
-        // 0: Tab "Danh mục chi" -> Truyền 0 vào Fragment
-        // 1: Tab "Danh mục thu" -> Truyền 1 vào Fragment
 
         // Gọi hàm newInstance() static bên CategoryListFragment để tạo Fragment kèm tham số
         return CategoryListFragment.newInstance(position);
