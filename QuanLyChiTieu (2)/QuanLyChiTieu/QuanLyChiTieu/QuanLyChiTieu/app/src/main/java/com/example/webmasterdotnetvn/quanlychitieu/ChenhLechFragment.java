@@ -40,7 +40,7 @@ public class ChenhLechFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        
+
         barChart = view.findViewById(R.id.barChart_chenhLech);
 
         // 2. Trang trí

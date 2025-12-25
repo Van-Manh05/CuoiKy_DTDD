@@ -2,10 +2,10 @@
 package com.example.webmasterdotnetvn.quanlychitieu;
 
 public class ChiPhi {
-    private int iconResId; // ID của icon (ví dụ: R.drawable.ic_home)
-    private String tenNhom; // Tên (ví dụ: "Nhà cửa")
-    private double soTien; // Số tiền (ví dụ: 6000000)
-    private double phanTramThayDoi; // Thay đổi (ví dụ: 6000000)
+    private int iconResId;
+    private String tenNhom;
+    private double soTien;
+    private double phanTramThayDoi;
 
     // Constructor (Hàm khởi tạo)
     public ChiPhi(int iconResId, String tenNhom, double soTien, double phanTramThayDoi) {
@@ -15,7 +15,7 @@ public class ChiPhi {
         this.phanTramThayDoi = phanTramThayDoi;
     }
 
-    // Getters (Hàm để lấy thông tin ra)
+    
     public int getIconResId() { return iconResId; }
     public String getTenNhom() { return tenNhom; }
     public double getSoTien() { return soTien; }
