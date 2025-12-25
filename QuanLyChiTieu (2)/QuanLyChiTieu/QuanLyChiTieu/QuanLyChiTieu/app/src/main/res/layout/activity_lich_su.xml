@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:background="#2196F3"
             android:orientation="vertical"
-            android:paddingBottom="16dp">
+            android:paddingBottom="15dp">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
