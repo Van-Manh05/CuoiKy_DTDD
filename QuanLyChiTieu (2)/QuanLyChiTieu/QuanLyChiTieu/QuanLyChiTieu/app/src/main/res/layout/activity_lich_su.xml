@@ -136,12 +136,5 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <!-- Floating Action Button -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_lich_su"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/plus"
-        app:layout_anchor="@id/bottom_navigation_lich_su"
-        app:layout_anchorGravity="top|center"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
