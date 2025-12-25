@@ -29,7 +29,7 @@ public class NhomChiFragment extends Fragment {
     List<ChiPhi> danhSachChiPhi; // <-- KHAI BÁO MỚI
 
     public NhomChiFragment() {
-        // Required empty public constructor
+
     }
 
     @Override

@@ -29,8 +29,7 @@ public class QuanLyViActivity extends AppCompatActivity {
 
     private ImageView btnBack, btnAddWallet;
     private ListView lvWallets;
-
-    // Sử dụng Adapter tùy chỉnh thay vì ArrayAdapter mặc định
+    
     private WalletAdapter adapter;
     private List<WalletModel> walletList;
 
