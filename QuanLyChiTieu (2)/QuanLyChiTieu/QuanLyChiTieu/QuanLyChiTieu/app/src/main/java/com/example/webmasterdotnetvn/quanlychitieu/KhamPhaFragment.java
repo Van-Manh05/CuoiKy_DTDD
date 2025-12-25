@@ -28,7 +28,7 @@ public class KhamPhaFragment extends Fragment {
         // 1. Gắn layout XML vào Fragment
         View view = inflater.inflate(R.layout.fragment_kham_pha, container, false);
 
-        // 2. Ánh xạ View (Tìm View theo ID từ file XML)
+
         initViews(view);
 
         // 3. Thiết lập dữ liệu (Giả lập hiển thị email giống ảnh)

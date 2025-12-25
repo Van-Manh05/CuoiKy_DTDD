@@ -49,7 +49,7 @@ public class LichSuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lich_su);
 
-        // --- Toolbar ---
+
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -58,7 +58,7 @@ public class LichSuActivity extends AppCompatActivity {
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        // --- Date Handling Initialization ---
+        
         tvDateRange = findViewById(R.id.tvDateRange);
         ImageView arrowLeft = findViewById(R.id.arrow_left_date);
         ImageView arrowRight = findViewById(R.id.arrow_right_date);

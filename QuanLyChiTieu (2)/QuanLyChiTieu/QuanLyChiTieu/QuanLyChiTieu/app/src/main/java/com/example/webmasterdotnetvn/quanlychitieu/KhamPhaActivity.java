@@ -40,7 +40,7 @@ public class KhamPhaActivity extends AppCompatActivity {
     private LinearLayout btnCategorySetting, btnWalletSetting, btnChangePassword, btnLogout;
     private BottomNavigationView bottomNavigationView;
     private PieChart pieChart;
-    
+
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private DecimalFormat formatter = new DecimalFormat("#,###");
