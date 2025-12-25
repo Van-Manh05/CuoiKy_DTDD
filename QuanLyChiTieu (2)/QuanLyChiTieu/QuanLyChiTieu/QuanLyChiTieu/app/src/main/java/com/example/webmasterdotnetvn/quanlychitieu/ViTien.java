@@ -11,7 +11,11 @@ public class ViTien {
     public ViTien() {
     }
 
+<<<<<<< HEAD
 
+=======
+    // 2. Constructor đủ
+>>>>>>> baa02ed9adda1fbbe63f5f8e79c20d823d990fa4
     public ViTien(String id, String name, double balance) {
         this.id = id;
         this.name = name;

@@ -16,9 +16,15 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         // position 0 là tab đầu tiên, 1 là tab thứ hai
         if (position == 0) {
+<<<<<<< HEAD
             return new NhomChiFragment();
         } else {
             return new MucChiFragment();
+=======
+            return new NhomChiFragment(); // Trả về Fragment của Nhóm Chi
+        } else {
+            return new MucChiFragment(); // Trả về Fragment của Mục Chi
+>>>>>>> baa02ed9adda1fbbe63f5f8e79c20d823d990fa4
         }
     }
 

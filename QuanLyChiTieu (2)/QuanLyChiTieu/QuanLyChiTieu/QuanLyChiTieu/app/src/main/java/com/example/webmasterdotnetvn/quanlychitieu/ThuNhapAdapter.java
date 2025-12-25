@@ -45,7 +45,7 @@ public class ThuNhapAdapter extends RecyclerView.Adapter<ThuNhapAdapter.ThuNhapV
     public static class ThuNhapViewHolder extends RecyclerView.ViewHolder {
         ImageView icon;
         TextView categoryName;
-        TextView amount;
+        TextView amount; // tien
 
         public ThuNhapViewHolder(@NonNull View itemView) {
             super(itemView);
