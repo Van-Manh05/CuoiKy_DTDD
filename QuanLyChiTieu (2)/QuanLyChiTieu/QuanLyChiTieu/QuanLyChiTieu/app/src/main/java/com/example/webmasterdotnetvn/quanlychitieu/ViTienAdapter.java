@@ -21,7 +21,7 @@ public class ViTienAdapter extends RecyclerView.Adapter<ViTienAdapter.ViTienView
     // Interface mở rộng: Thêm onWalletLongClick (trả về true nếu đã xử lý)
     public interface OnWalletClickListener {
         void onWalletClick(ViTien viTien);
-        void onWalletLongClick(ViTien viTien); // Mới thêm
+        void onWalletLongClick(ViTien viTien);
     }
 
     public ViTienAdapter(List<ViTien> mList, OnWalletClickListener listener) {
